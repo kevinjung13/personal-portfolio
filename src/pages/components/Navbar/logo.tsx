@@ -11,7 +11,6 @@ export default function Logo() {
         _hover={{
         bg: useColorModeValue('none', 'navbar.background'),
         opacity: (colorMode === 'light' ? '50%' : 'none')}}>
-          
         {/* Logo Image */}
         <Image
           alt={'logo'}
@@ -19,7 +18,6 @@ export default function Logo() {
           h={'50'}
           src={colorMode === 'light' ? '../logo-black.png' : '../logo-white.png'}>
         </Image>
-     
       </Link>
     </>
   )

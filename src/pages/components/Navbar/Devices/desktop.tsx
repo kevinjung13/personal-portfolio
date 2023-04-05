@@ -1,52 +1,46 @@
 import { NavBarProps } from "..";
 import { Links } from "..";
-import {Box, Flex, Stack, Text, useColorModeValue } from "@chakra-ui/react";
+import { Box, Stack, Text, useColorMode } from "@chakra-ui/react";
 
+/* Navbar Item Function */
 function DesktopItem(props: NavBarProps) {
 
+  const { colorMode } = useColorMode();
   const { name, href } = props;
 
   return (
     <>
-        <Stack direction={'row'} align={'center'}>
-          <Box
+      {/* Stacking */}
+      <Stack direction={'row'} align={'center'}>
+        {/* Container */}
+        <Box
           as={'a'}
           href={href}
-          role={'group'}
-          display={'block'}
           p={2}
           rounded={'md'}
           _hover={{ bg: 'none' }}>
+          {/* Options */}
             <Text
               transition={'all .3s ease'}
               fontWeight={'bold'}
               fontSize={'lg'}
-              _groupHover={{
-                color: `useColorModeValue('brown', 'yellow.400')`}}>
+              _hover={{color: (colorMode === 'light' ? 'brown' : 'yellow.400')}}>
               {name}
             </Text>
-          </Box>
-          <Flex
-            transition={'all .3s ease'}
-            transform={'translateX(-10px)'}
-            opacity={0}
-            _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
-            justify={'flex-end'}
-            align={'center'}
-            flex={1}>
-          </Flex>
-        </Stack>
+        </Box>
+      </Stack>
     </>
-    );
-  };
+  );
+};
 
+/* Desktop Version Navbar */
 export default function DesktopNav() {
 
   return (
     <>  
       {/* Stacking */}
       <Stack direction={'row'} spacing={4}>
-        {/* Options */}
+        {/* Rendering Navbar Items */}
         {Links.map((link) => (
           <DesktopItem {...link} />))}   
       </Stack> 

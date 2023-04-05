@@ -16,7 +16,7 @@ export interface NavBarProps {
 
 /* 2. Object with Header options */
 
-export const Links: Array<NavBarProps> = [
+export const Links = [
 
   {
     name: "About",
@@ -40,8 +40,10 @@ export default function Header() {
 
   return (
     <>
-      {/*👇 Container for whole Navbar */}
-      <Box bg={useColorModeValue('white', 'gray.700')} px={4}>
+      {/* Container for whole Navbar */}
+      <Box
+        bg={useColorModeValue('white', 'gray.700')}
+        px={4}>
         {/* Container for Navbar content */}
         <Flex
           minH={16}
@@ -51,31 +53,31 @@ export default function Header() {
           px={{ base: 4 }}>
           {/* Logo */}
           <Logo />
-          {/* Container for Mode and Options */}
+          {/* Mobile Container for Light/Dark Mode and Options */}
           <Flex display={{base: 'flex', md: 'none'}}>
-          {/* Light/Dark Mode Toggler */}
-          <DarkMode />
-          {/* Hamburger Icon */}
-          <IconButton
-            minW={0}
-            onClick={isOpen ? onClose : onOpen}
-            icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />}
-            variant={'ghost'}
-            aria-label={'Open Menu'}
-            size={"md"}
-            color={useColorModeValue('black', 'white')}
-            _hover={{
-              bg: 'none',
-              color: useColorModeValue('brown', 'yellow.400')}} />
+            {/* Light/Dark Mode Toggler */}
+            <DarkMode />
+            {/* Hamburger Icon */}
+            <IconButton
+              minW={0}
+              onClick={isOpen ? onClose : onOpen}
+              icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />}
+              variant={'ghost'}
+              aria-label={'Open Menu'}
+              size={"md"}
+              color={useColorModeValue('black', 'white')}
+              _hover={{
+                bg: 'none',
+                color: useColorModeValue('brown', 'yellow.400')}} />
           </Flex>
-          {/* Options on Desktop */}
-          <Flex display={{ base: 'none', md: 'flex' }} justify={'center'} align={'center'}>
+          {/* Desktop Container for Light/Dark Mode and Options */}
+          <Flex display={{ base: 'none', md: 'flex' }} align={'center'}>
             <DarkMode />
             <DesktopNav />
           </Flex>
-          </Flex>
-        {/* Display of Options on Mobile Devices */}
-        <Collapse in={isOpen} animateOpacity>
+        </Flex>
+       {/* Display of Options on Mobile Devices */}
+       <Collapse in={isOpen} animateOpacity>
           <MobileNav />
         </Collapse>
       </Box>

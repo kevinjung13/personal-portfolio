@@ -1,36 +1,40 @@
-import { chakra, Link, Stack, useColorModeValue, VisuallyHidden } from '@chakra-ui/react';
+import { Button, Stack} from '@chakra-ui/react';
 import { FaTwitter, FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
-import { ReactNode } from 'react';
 
-// Function to Set Footer Icons as Buttons
+/* Icon Props */
 
-const SocialButton = ({
-  children,
-  label,
-  href,
-}: {
-  children: ReactNode;
-  label: string;
-  href: string;
-}) => {
+interface SocialButtonProps {
+  name?: string;
+  icon: JSX.Element;
+  bgColor?: string;
+  fontColor?: string;
+  hoverColor?: string;
+  URL: string;
+}
+
+/* Function for Icon rendering */
+
+function SocialButton(props: SocialButtonProps) {
+
+  const { URL, bgColor, fontColor, hoverColor, icon } = props;  
+
   return (
-    <chakra.button
-      bg={useColorModeValue('none', 'none')}
-      rounded={'full'}
-      w={8}
-      h={8}
-      cursor={'pointer'}
+    <Button
       as={'a'}
-      href={href}
+      href={URL}
+      bg={bgColor}
+      color={fontColor}
+      _hover={{ bg: 'none', color: hoverColor }}
+      h={'100%'}
+      cursor={'pointer'}
       display={'inline-flex'}
       alignItems={'center'}
       justifyContent={'center'}
       transition={'background 0.3s ease'}>
-      <VisuallyHidden>{label}</VisuallyHidden>
-      {children}
-    </chakra.button>
+      {icon}
+    </Button>
   );
-};
+}
 
 export default function Icons() {
 
@@ -38,47 +42,34 @@ export default function Icons() {
     <>
       {/* 👇 Stacking of Responsive Icons */}
       <Stack direction={'row'} spacing={6}>
-
         {/* Twitter Icon */}
-        <Link _hover={{
-          color: 'footer.icons.twitter'}}>
-          <SocialButton 
-            label={'Twitter'}
-            href={'https://twitter.com/kevinhjung93'}>
-          <FaTwitter />
-          </SocialButton>
-        </Link>
-        
+          <SocialButton
+            URL={'https://twitter.com/kevinhjung93'}
+            bgColor={'none'}
+            fontColor={'none'}
+            hoverColor={'footer.icons.twitter'}
+            icon={<FaTwitter />} />             
           {/* Github Icon */}
-        <Link _hover={{
-          color: 'footer.icons.github'}}>
           <SocialButton 
-            label={'GitHub'} 
-            href={'https://github.com/kevinjung13'}>
-          <FaGithub />
-          </SocialButton>
-        </Link>
-
+            URL={'https://github.com/kevinjung13'}
+            bgColor={'none'}
+            fontColor={'none'}
+            hoverColor={'footer.icons.github'}
+            icon={<FaGithub />} />
         {/* Linkedin Icon */}
-        <Link _hover={{
-          color: 'footer.icons.linkedin'}}>
           <SocialButton 
-            label={'Linkedin'} 
-            href={'https://www.linkedin.com/in/kevin-hwisung-jung-11374a6a/'}>
-          <FaLinkedin />
-          </SocialButton>
-        </Link>
-
+            URL={'https://www.linkedin.com/in/kevin-hwisung-jung-11374a6a/'}
+            bgColor={'none'}
+            fontColor={'none'}
+            hoverColor={'footer.icons.linkedin'}
+            icon={<FaLinkedin />} />
         {/* Email Icon */}
-        <Link _hover={{
-          color: 'footer.icons.email'}}>
-          <SocialButton 
-            label={'Email'} 
-            href={'mailto:kevinjung13@gmail.com'}>
-          <FaEnvelope />
-          </SocialButton>
-        </Link>
-        
+          <SocialButton
+            URL={'mailto:kevinjung13@gmail.com'}
+            bgColor={'none'}
+            fontColor={'none'}
+            hoverColor={'footer.icons.email'}
+            icon={<FaEnvelope />} />
       </Stack>
     </>
   )

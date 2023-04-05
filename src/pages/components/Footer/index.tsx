@@ -1,16 +1,11 @@
-import {
-  Box,
-  Stack,
-  Text,
-  useColorModeValue
-} from '@chakra-ui/react';
-
+import { Box, Stack, Text, useColorModeValue } from '@chakra-ui/react';
 import Icons from './icons';
 
 export default function Footer() {
+  
   return (
 
-  //👇 Responsive Box for whole Footer
+    //👇 Responsive Box for whole Footer
     <Box
       as={Stack}
       maxW={'full'}
@@ -21,11 +16,9 @@ export default function Footer() {
       align={'center'}
       bg={useColorModeValue('black', 'footer.background')}
       color={useColorModeValue('white', 'gray.200')}>
-      
-      {/*Text */}
+      {/* Text */}
       <Text>© 2023 - Built by Kevin Jung </Text>
-
-      {/*Icons */}
+      {/* Icons */}
       <Icons /> 
     </Box>
   );

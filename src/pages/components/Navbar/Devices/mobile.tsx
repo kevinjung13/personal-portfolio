@@ -2,10 +2,10 @@ import { NavBarProps } from "..";
 import { Links } from "..";
 import {Collapse, Flex, Stack, Text, useColorModeValue, useDisclosure} from "@chakra-ui/react";
 
-/* 3. Rendering of Header Options */
+/* 3. Rendering of Options */
 function MobileNavLink(props: NavBarProps) {
 
-  const { name, href } = props;
+  const { name, href} = props;
   
   const { isOpen, onToggle } = useDisclosure();
 

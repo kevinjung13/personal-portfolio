@@ -1,8 +1,8 @@
 import React from 'react';
+import ProjectButton from './components/Button';
 import { useState } from 'react';
 import {
   Box,
-  Button,
   Container,
   Heading,
   IconButton,
@@ -10,8 +10,10 @@ import {
   Text,
   useBreakpointValue,
 } from '@chakra-ui/react';
-// Here we have used react-icons package for the icons
+
+// Icons from React-icons
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
+
 // And react-slick as our Carousel Lib
 import Slider from 'react-slick';
 
@@ -28,48 +30,45 @@ const settings = {
   slidesToScroll: 1,
 };
 
+// Card Data
+const cards = [
+  {
+    title: 'Conversor',
+    description: "Currency Exchange Website",
+    link: "https://currency-exchange-rosy.vercel.app/",
+    program: "HTML, CSS, JavaScript, React",
+    background: "linear-gradient(315deg, #9fa4c4 0%, #9e768f 75%)",
+    heading: "white",
+    text: "white"
+  },
+  {
+    title: 'Oasis Marketplace (On-going Project)',
+    description: "An Open Source AI NFT Marketplace. Created all Front End related components, layouts and functions",
+    link: "https://vercel.com/jeromevvb/oasis-marketplace/8WQ3B7psLPCsbMrLQHftCzE3mT8E",
+    program: "Next Js, Chakra UI & TypeScript",
+    background: "#2f2f2f",
+    heading: "white",
+    text: "white"
+  },
+  {
+    title: 'Project 3 (On-going Project)',
+    description: "Coming Soon",
+    link: "https://www.google.com",
+    program: "Next Js, Float UI, Tailwind CSS, Storybook",
+    background: "gray.800",
+    heading: "white",
+    text: "white"
+  }
+];
+
+
 export default function Work() {
-// As we have used custom buttons, we need a reference variable to
-  // change the state
+// Slider State
   const [slider, setSlider] = useState<Slider | null>(null);
 
-  // These are the breakpoints which changes the position of the
-  // buttons as the screen size changes
+  // Breakpoints for arrow button positioning
   const top = useBreakpointValue({ base: '90%', md: '50%' });
   const side = useBreakpointValue({ base: '30%', md: '40px' });
-
-  // This list contains all the data for carousels
-  // This can be static or loaded from a server
-  const cards = [
-    {
-      title: 'Project 3',
-      description: "Coming Soon",
-      ProjectURL: "/about",
-      program: "Next Js, Float UI, Tailwind CSS, Storybook",
-      background: "gray.800",
-      heading: "white",
-      text: "white"
-    },
-    {
-      title: 'Conversor',
-      description: "Currency Exchange Website",
-      ProjectURL: "https://currency-exchange-rosy.vercel.app/",
-      program: "HTML, CSS, JavaScript, React",
-      background: "linear-gradient(315deg, #9fa4c4 0%, #9e768f 75%)",
-      heading: "white",
-      text: "white"
-    },
-    {
-      title: 'Oasis Marketplace',
-      description: "An AI NFT Marketplace. Created all Front End related components, layouts and functions",
-      ProjectURL: "/",
-      program: "Next Js, Chakra UI & TypeScript",
-      background: "#2f2f2f",
-      heading: "white",
-      text: "white"
-    }
-  ];
-
 
   return (
     <Box
@@ -149,22 +148,15 @@ export default function Work() {
                   <br />
                   {card.program}
                 </Text>
-                  <Button
-                    as={'a'}
-                    href={`${card.ProjectURL[index]}`}
-                    bg={'blue.400'}
-                    w={'fit-content'}
-                    color={card.text}
-                    rounded={'full'}
-                  _hover={{
-                    bg: 'red.500'
-                  }}>
-                Check out project
-                </Button>
+                <ProjectButton
+                URL={`${card.link}`}
+                bgColor={'blue.400'}
+                fontColor={'white'}
+                text={'See Project'}
+                hoverColor={'red.500'}/> 
               </Stack>
             </Container>
-          </Box>
-        ))}
+          </Box>))}
       </Slider>
     </Box>
   );

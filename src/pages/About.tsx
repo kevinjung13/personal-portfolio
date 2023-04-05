@@ -1,3 +1,4 @@
+import ProjectButton from './components/Button';
 import {
   Box,
   Container, 
@@ -7,7 +8,6 @@ import {
   Heading,
   Text,
   Stack,
-  Button,
   useColorModeValue,
 } from '@chakra-ui/react';
 
@@ -51,21 +51,14 @@ export default function About() {
               </Text>
             </Box>
 
-            {/* Stacking of Button */ }
-            <Stack direction={{ base: 'column', md: 'row' }}>
-              <Button
-              as={'a'}
-              href={'/'}
-              mt={10}
-              rounded={'full'}
-              bg={useColorModeValue('blue.400', 'navbar.background')}
-              color={'white'}
-              _hover={{
-                bg: 'red.500'}}>
-              CV / Resume
-              </Button>
-            </Stack>
-
+            {/* Button */ }
+            <ProjectButton
+              URL={'/'}
+              bgColor={useColorModeValue('blue.400', 'navbar.background')}
+              fontColor={'white'}
+              text={'Resume'}
+              hoverColor={'red.500'}/> 
+              
           </Stack>
           
           {/* Flex Container for Image */ }
