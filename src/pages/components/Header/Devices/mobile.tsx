@@ -1,42 +1,9 @@
-import {
-  Collapse,
-  Flex,
-  Stack,
-  Text,
-  useColorModeValue,
-  useDisclosure
-} from "@chakra-ui/react";
-
-/* 1. Header Props */
-
-interface Header {
-  name: string;
-  subLabel?: string;
-  children?: Array<Header>;
-  href?: string;
-}
-
-/* 2. Object with Header options */
-
-const Links: Array<Header> = [
-
-  {
-    name: "About",
-    href: "../about"
-  },
-
-  {
-    name: "Work",
-    href: "../work"
-  },
-
-  {
-    name: "Contact",
-    href: "../contact"
-  }];
+import { NavBarProps } from "..";
+import { Links } from "..";
+import {Collapse, Flex, Stack, Text, useColorModeValue, useDisclosure} from "@chakra-ui/react";
 
 /* 3. Rendering of Header Options */
-function MobileNavLink(props: Header) {
+function MobileNavLink(props: NavBarProps) {
 
   const { name, href } = props;
   
@@ -97,9 +64,9 @@ export default function MobileNav() {
         bg={useColorModeValue('white', 'gray.700')}
         p={4}
         display={{ md: 'none' }}>
-        {/* Render */} 
+        {/* Render of MobileNavLink */} 
         {Links.map((link) => (
-          <MobileNavLink key={link.name} {...link} />))}
+          <MobileNavLink {...link} />))}
       </Stack>
     </>
   );

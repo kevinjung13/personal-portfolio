@@ -5,6 +5,34 @@ import MobileNav from "./Devices/mobile";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { Box, Collapse, Flex, IconButton, useColorModeValue, useDisclosure } from "@chakra-ui/react";
 
+/* 1. Header Props */
+
+export interface NavBarProps {
+  name: string;
+  subLabel?: string;
+  children?: Array<NavBarProps>;
+  href?: string;
+}
+
+/* 2. Object with Header options */
+
+export const Links: Array<NavBarProps> = [
+
+  {
+    name: "About",
+    href: "../about",
+  },
+
+  {
+    name: "Work",
+    href: "../work",
+  },
+
+  {
+    name: "Contact",
+    href: "../contact",
+  }];
+
 export default function Header() {
 
 // Menu Button Opening/Closing Function
@@ -26,7 +54,7 @@ export default function Header() {
           {/* Container for Mode and Options */}
           <Flex display={{base: 'flex', md: 'none'}}>
           {/* Light/Dark Mode Toggler */}
-        <DarkMode />
+          <DarkMode />
           {/* Hamburger Icon */}
           <IconButton
             minW={0}
@@ -38,8 +66,7 @@ export default function Header() {
             color={useColorModeValue('black', 'white')}
             _hover={{
               bg: 'none',
-              color: useColorModeValue('brown', 'yellow.400')
-            }} />
+              color: useColorModeValue('brown', 'yellow.400')}} />
           </Flex>
           {/* Options on Desktop */}
           <Flex display={{ base: 'none', md: 'flex' }} justify={'center'} align={'center'}>

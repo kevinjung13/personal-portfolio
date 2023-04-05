@@ -1,63 +1,28 @@
-import {
-  Box,
-  Flex,
-  Link,
-  Stack,
-  Text,
-  Popover,
-  PopoverTrigger,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { NavBarProps } from "..";
+import { Links } from "..";
+import {Box, Flex, Stack, Text, useColorModeValue } from "@chakra-ui/react";
 
-/* 1. Header Props */
-
-interface Header {
-  name: string;
-  subLabel?: string;
-  children?: Array<Header>;
-  href?: string;
-}
-
-/* 2. Object with Header options */
-
-const Links: Array<Header> = [
-
-  {
-    name: "About",
-    href: "../about",
-  },
-
-  {
-    name: "Work",
-    href: "../work",
-  },
-
-  {
-    name: "Contact",
-    href: "../contact",
-  }];
-
-function DesktopSubNav(props: Header) {
+function DesktopItem(props: NavBarProps) {
 
   const { name, href } = props;
 
   return (
     <>
-      <Link
-        href={href}
-        role={'group'}
-        display={'block'}
-        p={2}
-        rounded={'md'}
-        _hover={{ bg: 'none' }}>
         <Stack direction={'row'} align={'center'}>
-          <Box>
+          <Box
+          as={'a'}
+          href={href}
+          role={'group'}
+          display={'block'}
+          p={2}
+          rounded={'md'}
+          _hover={{ bg: 'none' }}>
             <Text
               transition={'all .3s ease'}
+              fontWeight={'bold'}
+              fontSize={'lg'}
               _groupHover={{
-                color: useColorModeValue('brown', 'yellow.400')
-              }}
-              fontWeight={500} >
+                color: `useColorModeValue('brown', 'yellow.400')`}}>
               {name}
             </Text>
           </Box>
@@ -71,7 +36,6 @@ function DesktopSubNav(props: Header) {
             flex={1}>
           </Flex>
         </Stack>
-      </Link>
     </>
     );
   };
@@ -84,23 +48,7 @@ export default function DesktopNav() {
       <Stack direction={'row'} spacing={4}>
         {/* Options */}
         {Links.map((link) => (
-        <Box key={link.name}>
-          <Popover trigger={'hover'} placement={'bottom-start'} >
-            <PopoverTrigger>
-              <Link
-                p={2}
-                href={link.href}
-                fontSize={'lg'}
-                fontWeight={'bold'}
-                color={useColorModeValue('black', 'white')}
-                _hover={{
-                  textDecoration: 'none',
-                  color: useColorModeValue('brown', 'yellow.400')}}>
-                  {link.name}
-                </Link>
-              </PopoverTrigger>
-          </Popover>
-        </Box>))}   
+          <DesktopItem {...link} />))}   
       </Stack> 
     </>
   );
