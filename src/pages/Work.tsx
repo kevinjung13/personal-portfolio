@@ -2,12 +2,13 @@ import React from 'react';
 import { useState } from 'react';
 import {
   Box,
-  IconButton,
-  useBreakpointValue,
-  Stack,
-  Heading,
-  Text,
+  Button,
   Container,
+  Heading,
+  IconButton,
+  Stack,
+  Text,
+  useBreakpointValue,
 } from '@chakra-ui/react';
 // Here we have used react-icons package for the icons
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
@@ -41,29 +42,34 @@ export default function Work() {
   // This can be static or loaded from a server
   const cards = [
     {
-      title: 'Conversor Currency Exchange',
-      description:
-        "Currency Exchange Website",
-      program: "React & Tailwind CSS",
-      image:
-        'https://images.unsplash.com/photo-1516796181074-bf453fbfa3e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
+      title: 'Project 3',
+      description: "Coming Soon",
+      ProjectURL: "/about",
+      program: "Next Js, Float UI, Tailwind CSS, Storybook",
+      background: "gray.800",
+      heading: "white",
+      text: "white"
+    },
+    {
+      title: 'Conversor',
+      description: "Currency Exchange Website",
+      ProjectURL: "https://currency-exchange-rosy.vercel.app/",
+      program: "HTML, CSS, JavaScript, React",
+      background: "linear-gradient(315deg, #9fa4c4 0%, #9e768f 75%)",
+      heading: "white",
+      text: "white"
     },
     {
       title: 'Oasis Marketplace',
-      description:
-        "An AI NFT Marketplace. Created all Front End related components, layouts and functions",
-      program: "Next Js, Chakra UI, TypeScript & Storybook",
-      image:
-        'https://images.unsplash.com/photo-1438183972690-6d4658e3290e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2274&q=80',
-    },
-    {
-      title: 'Design Projects 3',
-      description: "Hello",
-      program: "TBA",
-      image:
-        'https://images.unsplash.com/photo-1507237998874-b4d52d1dd655?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
-    },
+      description: "An AI NFT Marketplace. Created all Front End related components, layouts and functions",
+      ProjectURL: "/",
+      program: "Next Js, Chakra UI & TypeScript",
+      background: "#2f2f2f",
+      heading: "white",
+      text: "white"
+    }
   ];
+
 
   return (
     <Box
@@ -93,7 +99,8 @@ export default function Work() {
         top={top}
         transform={'translate(0%, -50%)'}
         zIndex={2}
-        onClick={() => slider?.slickPrev()}>
+        onClick={() => slider?.slickPrev()}
+        color={'white'}>
         <BiLeftArrowAlt size="40px" />
       </IconButton>
 
@@ -106,7 +113,8 @@ export default function Work() {
         top={top}
         transform={'translate(0%, -50%)'}
         zIndex={2}
-        onClick={() => slider?.slickNext()}>
+        onClick={() => slider?.slickNext()}
+        color={'white'}>
         <BiRightArrowAlt size="40px" />
       </IconButton>
 
@@ -114,32 +122,45 @@ export default function Work() {
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
         {cards.map((card, index) => (
           <Box
-            key={index}
             height={'6xl'}
             position="relative"
-            backgroundPosition="center"
-            backgroundRepeat="no-repeat"
-            backgroundSize="cover"
-            backgroundImage={`url(${card.image})`}>
-            
+            bgPosition="center"
+            bgSize="fit"
+            bg={card.background}>
             {/* This is the block you need to change, to customize the caption */}
-            <Container size="container.lg" height="600px" position="relative">
+            <Container
+              size={'container.lg'}
+              height={'600px'}
+              position={'relative'}>
               <Stack
                 spacing={6}
                 w={'full'}
                 maxW={'lg'}
-                position="absolute"
-                top="50%"
-                transform="translate(0, -50%)">
-                <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
+                position={'absolute'}
+                top={'50%'}
+                transform={'translate(0, -50%)'}>
+                <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }} color={card.heading}>
                   {card.title}
                 </Heading>
-                <Text fontSize={{ base: 'md', lg: 'lg' }} color="GrayText">
+                <Text fontSize={{ base: 'md', lg: 'lg' }}
+                  color={card.text}>
                   {card.description}
                   <br />
                   <br />
                   {card.program}
                 </Text>
+                  <Button
+                    as={'a'}
+                    href={`${card.ProjectURL[index]}`}
+                    bg={'blue.400'}
+                    w={'fit-content'}
+                    color={card.text}
+                    rounded={'full'}
+                  _hover={{
+                    bg: 'red.500'
+                  }}>
+                Check out project
+                </Button>
               </Stack>
             </Container>
           </Box>

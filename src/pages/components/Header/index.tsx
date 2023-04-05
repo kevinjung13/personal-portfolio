@@ -1,106 +1,58 @@
-import { ReactNode } from 'react';
-import {
-  Box,
-  Flex,
-  HStack,
-  IconButton,
-  Link,
-  Stack,
-  useDisclosure,
-  useColorModeValue
-} from '@chakra-ui/react';
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
-
-import Logo from './logo';
-import DarkMode from './mode';
-import ResponsiveMenu from './menu';
-
-// 👇 Menu options
-
-const Links = ['About', 'Work', 'Contact']
-
- // 👇 Function to render Menu options
-
-const NavLink = ({ children }: { children: ReactNode }) => (
-  <Link
-    px={2}
-    py={1}
-    rounded={'md'}
-    color={useColorModeValue('black', 'white')}
-    _hover={{
-      textDecoration: 'none',
-      bg: useColorModeValue('gray.200', 'navbar.background'),
-    }}
-    href={`/${children}`}>
-    {children}
-  </Link>
-);
+import Logo from "./logo";
+import DarkMode from "./mode";
+import DesktopNav from "./Devices/desktop";
+import MobileNav from "./Devices/mobile";
+import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { Box, Collapse, Flex, IconButton, useColorModeValue, useDisclosure } from "@chakra-ui/react";
 
 export default function Header() {
 
 // Menu Button Opening/Closing Function
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen, onOpen, onClose} = useDisclosure();
 
   return (
-    
-    // 👇 Container for entire navbar
-    <Box
-      bg={useColorModeValue('none', 'gray.700')} px={4}>
-
-      {/* 👇 Container for content inside of navbar */}
-      <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-
-        {/* logo */}
-        <Logo />
-        
-        {/* 👇 Container for Menu Options and Toggler */}
-        <Flex alignItems={'center'} >
-            
-        {/* Stacking of Menu Options */}
-          <HStack
-            as={'nav'}
-            spacing={4}
-            display={{ base: 'none', md: 'flex' }}>
-            {Links.map((link) => (
-              <NavLink key={link}>{link}</NavLink>
-            ))}
-          </HStack>
-      
+    <>
+      {/*👇 Container for whole Navbar */}
+      <Box bg={useColorModeValue('white', 'gray.700')} px={4}>
+        {/* Container for Navbar content */}
+        <Flex
+          minH={16}
+          justify={'space-between'}
+          align={'center'}
+          py={{ base: 2 }}
+          px={{ base: 4 }}>
+          {/* Logo */}
+          <Logo />
+          {/* Container for Mode and Options */}
+          <Flex display={{base: 'flex', md: 'none'}}>
           {/* Light/Dark Mode Toggler */}
-          <DarkMode />
-          
-          {/* Responsive Open/Close Menu Button for tablets and phones */}
+        <DarkMode />
+          {/* Hamburger Icon */}
           <IconButton
-            size={'md'}
-            bg={'none'}
-            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            aria-label={'Open Menu'}
-            display={{ md: 'none' }}
+            minW={0}
             onClick={isOpen ? onClose : onOpen}
-            ml={'5'}
+            icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />}
+            variant={'ghost'}
+            aria-label={'Open Menu'}
+            size={"md"}
+            color={useColorModeValue('black', 'white')}
             _hover={{
-              bg: useColorModeValue('gray.200', 'navbar.background')
+              bg: 'none',
+              color: useColorModeValue('brown', 'yellow.400')
             }} />
-          
-          {/* Responsive Menu */}
-          <ResponsiveMenu />
-
-        </Flex>
-
-      </Flex>
-      
-      {/* Ternary Operator for Menu */}
-
-      {isOpen ? (
-          <Box pb={4} display={{ md: 'none' }}>
-            <Stack as={'nav'} spacing={4}>
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
-              ))}
-            </Stack>
-          </Box>
-        ) : null}
-
+          </Flex>
+          {/* Options on Desktop */}
+          <Flex display={{ base: 'none', md: 'flex' }} justify={'center'} align={'center'}>
+            <DarkMode />
+            <DesktopNav />
+          </Flex>
+          </Flex>
+        {/* Display of Options on Mobile Devices */}
+        <Collapse in={isOpen} animateOpacity>
+          <MobileNav />
+        </Collapse>
       </Box>
+    </>
   );
 }
+    

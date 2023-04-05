@@ -25,10 +25,7 @@ const SocialButton = ({
       display={'inline-flex'}
       alignItems={'center'}
       justifyContent={'center'}
-      transition={'background 0.3s ease'}
-      _hover={{
-      bg: useColorModeValue('blackAlpha.100', 'whiteAlpha.100')
-      }}>
+      transition={'background 0.3s ease'}>
       <VisuallyHidden>{label}</VisuallyHidden>
       {children}
     </chakra.button>

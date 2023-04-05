@@ -13,11 +13,8 @@ export default function DarkMode() {
         ml={'5'}
         bg={'none'}
         color={useColorModeValue('black','white')}
-        _hover={{
-          bg: useColorModeValue('gray.300', 'navbar.background')}}>
-        
+        _hover={{color: useColorModeValue('brown', 'yellow.400')}}>
         {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-        
       </Button>
     </>
   )

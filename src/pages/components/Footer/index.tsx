@@ -15,13 +15,12 @@ export default function Footer() {
       as={Stack}
       maxW={'full'}
       py={4}
-   
       direction={'column'}
       spacing={4}
       justify={'center'}
       align={'center'}
-      bg={useColorModeValue('gray.200', 'footer.background')}
-      color={useColorModeValue('gray.700', 'gray.200')}>
+      bg={useColorModeValue('black', 'footer.background')}
+      color={useColorModeValue('white', 'gray.200')}>
       
       {/*Text */}
       <Text>© 2023 - Built by Kevin Jung </Text>
