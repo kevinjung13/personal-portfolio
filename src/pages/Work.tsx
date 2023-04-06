@@ -24,7 +24,7 @@ const settings = {
 
 export default function Work() {
   
-  /* Slider State */
+    /* Slider State */
   const [slider, setSlider] = useState<Slider | null>(null);
     /* Breakpoints for arrow button positioning */
   const top = useBreakpointValue({ base: '90%', md: '50%' });
@@ -34,6 +34,7 @@ export default function Work() {
     <>
       {/* Container */}
       <Box
+      id={'work'}
       position={'relative'}
       height={'600px'}
       width={'full'}
@@ -76,7 +77,8 @@ export default function Work() {
           <Card
             title={'Conversor'}
             description={'A Currency Exchange Website'}
-            URL={'https://currency-exchange-rosy.vercel.app/'}
+            link={'https://currency-exchange-rosy.vercel.app/'}
+            target={'_blank'}
             program={'HTML, CSS, JavaScript, React'}
             background={'linear-gradient(315deg, #9fa4c4 0%, #9e768f 75%)'}
             heading={'white'}
@@ -84,7 +86,8 @@ export default function Work() {
           <Card
             title={'Oasis Marketplace (On-going Project)'}
             description={'An Open Source AI NFT Marketplace. Created all Front End related components, layouts and functions'}
-            URL={'https://vercel.com/jeromevvb/oasis-marketplace/8WQ3B7psLPCsbMrLQHftCzE3mT8E'}
+            link={'https://vercel.com/jeromevvb/oasis-marketplace/8WQ3B7psLPCsbMrLQHftCzE3mT8E'}
+            target={'_blank'}
             program={'Next Js, Chakra UI & TypeScript'}
             background={'#2f2f2f'}
             heading={'white'}
@@ -92,7 +95,8 @@ export default function Work() {
           <Card
             title={'Project 3'}
             description={'Coming Soon'}
-            URL={'https://www.google.com'}
+            link={'https://www.google.com'}
+            target={'_blank'}
             program={'Next Js, Float UI, Tailwind CSS, Storybook'}
             background={'gray.800'}
             heading={'white'}

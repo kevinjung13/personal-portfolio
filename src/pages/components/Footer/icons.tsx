@@ -1,4 +1,4 @@
-import { Button, Stack} from '@chakra-ui/react';
+import { Button, Stack, useColorModeValue } from '@chakra-ui/react';
 import { FaTwitter, FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 /* Icon Props */
@@ -8,15 +8,17 @@ interface SocialButtonProps {
   icon: JSX.Element;
   bgColor?: string;
   fontColor?: string;
+  hoverBgColor?: string;
   hoverColor?: string;
   URL: string;
+  target: string;
 }
 
 /* Function for Icon rendering */
 
 function SocialButton(props: SocialButtonProps) {
 
-  const { URL, bgColor, fontColor, hoverColor, icon } = props;  
+  const { URL, bgColor, fontColor, hoverColor, icon, target } = props;  
 
   return (
     <Button
@@ -25,12 +27,14 @@ function SocialButton(props: SocialButtonProps) {
       bg={bgColor}
       color={fontColor}
       _hover={{ bg: 'none', color: hoverColor }}
-      h={'100%'}
+      target={target}
+      size={'md'}
       cursor={'pointer'}
       display={'inline-flex'}
       alignItems={'center'}
       justifyContent={'center'}
-      transition={'background 0.3s ease'}>
+      transition={'background 0.3s ease'}
+      >
       {icon}
     </Button>
   );
@@ -45,6 +49,7 @@ export default function Icons() {
         {/* Twitter Icon */}
         <SocialButton
           URL={'https://twitter.com/kevinhjung93'}
+          target={'_blank'}
           bgColor={'none'}
           fontColor={'none'}
           hoverColor={'footer.icons.twitter'}
@@ -52,6 +57,7 @@ export default function Icons() {
         {/* Github Icon */}
         <SocialButton 
           URL={'https://github.com/kevinjung13'}
+          target={'_blank'}
           bgColor={'none'}
           fontColor={'none'}
           hoverColor={'footer.icons.github'}
@@ -59,6 +65,7 @@ export default function Icons() {
         {/* Linkedin Icon */}
         <SocialButton 
           URL={'https://www.linkedin.com/in/kevin-hwisung-jung-11374a6a/'}
+          target={'_blank'}
           bgColor={'none'}
           fontColor={'none'}
           hoverColor={'footer.icons.linkedin'}
@@ -66,6 +73,7 @@ export default function Icons() {
         {/* Email Icon */}
         <SocialButton
           URL={'mailto:kevinjung13@gmail.com'}
+          target={'_blank'}
           bgColor={'none'}
           fontColor={'none'}
           hoverColor={'footer.icons.email'}

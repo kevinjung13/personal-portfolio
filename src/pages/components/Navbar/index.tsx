@@ -20,17 +20,17 @@ export const Links = [
 
   {
     name: "About",
-    href: "../about",
+    href: "#about",
   },
 
   {
     name: "Work",
-    href: "../work",
+    href: "#work",
   },
 
   {
     name: "Contact",
-    href: "../contact",
+    href: "#contact",
   }];
 
 export default function Header() {

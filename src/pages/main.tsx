@@ -6,24 +6,21 @@ export default function Main() {
     <>
       {/* 👇 Box for whole main section + background image */}
       <Box
-        bgImage={{ base: "url('main.bg.small.jpg')", md: "url('main.bg.jpg')" }}
+        bgImage={{ base: "url('/photos/main.bg.small.jpg')", md: "url('/photos/main.bg.jpg')" }}
         bgPosition={"center"}
         bgSize={"cover"}
-        bgRepeat={"no-repeat"}
-      >
+        bgRepeat={"no-repeat"}>
         {/* 👇 Stacking of whole main section */}
         <Stack
           minH={"100vh"}
           direction={"row"}
           p={{ base: 15, md: 15 }}
-          justify={{ base: "center", md: "start" }}
-        >
+          justify={{ base: "center", md: "start" }}>
           {/* 👇 Container for text and buttons */}
           <Flex
             direction={"row"}
             align={{ base: "end", md: "center" }}
-            justify={"center"}
-          >
+            justify={"center"}>
             {/* Stacking */}
             <Stack
               p={8}
@@ -55,8 +52,7 @@ export default function Main() {
                   bgColor={"blue.400"}
                   fontColor={"white"}
                   text={"Introduction"}
-                  hoverColor={"red.500"}
-                />
+                  hoverColor={"red.500"} />
               </Stack>
             </Stack>
           </Flex>

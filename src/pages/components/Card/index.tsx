@@ -5,7 +5,8 @@ import ProjectButton from '../Common/Button';
 interface CardProps {
   title: string;
   description: string;
-  URL: string;
+  link: string;
+  target: string;
   program: string;
   background: string;
   heading?: string;
@@ -14,12 +15,20 @@ interface CardProps {
 
 export default function Card (props: CardProps) {
 
-  const {title, description, URL, program, background, heading, text } = props;
+  const {
+    title,
+    description,
+    link,
+    target,
+    program,
+    background,
+    heading,
+    text
+  } = props;
 
   return (
     <>
       <Box
-        
         position="relative"
         bgPosition="center"
         bgSize="cover"
@@ -49,11 +58,12 @@ export default function Card (props: CardProps) {
               {program}
             </Text>
             <ProjectButton
-            URL={URL}
-            bgColor={'blue.400'}
-            fontColor={'white'}
-            text={'See Project'}
-            hoverColor={'red.500'} /> 
+              URL={link}
+              target={target}
+              bgColor={'blue.400'}
+              fontColor={'white'}
+              text={'See Project'}
+              hoverColor={'red.500'} /> 
           </Stack>
         </Container>
       </Box>
