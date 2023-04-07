@@ -89,11 +89,11 @@ export default function Contact() {
                   </FormControl>
                   {/* Send Message Button */} 
                   <ProjectButton
-                    URL={"/"}
-                    bgColor={useColorModeValue("blue.400", "navbar.background")}
-                    fontColor={useColorModeValue("gray.100", "white")}
-                    text={"Send Message"}
-                    hoverColor={"red.500"}>
+                     URL={"/"}
+                     bgColor={useColorModeValue("blue.400", "navbar.background")}
+                     fontColor={useColorModeValue("gray.100", "white")}
+                     text={"Send Message"}
+                     hoverColor={"red.500"}>
                   </ProjectButton>
                 </VStack>
                 </Box>

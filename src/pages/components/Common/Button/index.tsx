@@ -13,7 +13,6 @@ export interface ButtonProps {
   onClick?(event: React.MouseEvent<HTMLElement>): void
   isDisabled?: boolean
   isLoading?: boolean
-  children?: string
 }
 
 /* Rendering */

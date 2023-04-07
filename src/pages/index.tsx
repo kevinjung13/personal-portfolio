@@ -1,8 +1,5 @@
 import Head from 'next/head';
 import Main from './main';
-import About from './about';
-import Work from './work';
-import Contact from './contact';
 
 export default function Home() {
   return (
@@ -15,9 +12,6 @@ export default function Home() {
       </Head>
       <main>
         <Main />
-        <About />
-        <Work />
-        <Contact />
       </main>
     </>
   )
