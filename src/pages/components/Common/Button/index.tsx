@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Button } from "@chakra-ui/react";
 
 /* Button Props */
@@ -9,6 +10,7 @@ export interface ButtonProps {
   hoverColor?: string;
   URL?: string;
   target?: string;
+  type?: string;
   download?: string;
   onClick?(event: React.MouseEvent<HTMLElement>): void
   isDisabled?: boolean
@@ -23,17 +25,16 @@ export default function ProjectButton(props: ButtonProps) {
 
   return (
     <>
-      <Button
-      as={'a'}
-      w={'fit-content'}
-      rounded={'full'}
-      href={URL}
-      target={target}
-      bg={bgColor}
-      color={fontColor}
-      _hover={{ bg: hoverColor }}>
-      {text}
-      </Button>
+      <Link href={`${URL}`} target={target}>
+        <Button
+          w={'fit-content'}
+          rounded={'full'}
+          bg={bgColor}
+          color={fontColor}
+          _hover={{ bg: hoverColor }}>
+          {text}
+        </Button>
+      </Link>
     </>
   )
 }

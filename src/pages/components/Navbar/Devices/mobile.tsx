@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { NavBarProps } from "..";
 import { Links } from "..";
 import {Collapse, Flex, Stack, Text, useColorModeValue, useDisclosure} from "@chakra-ui/react";
@@ -14,29 +15,29 @@ function MobileNavLink(props: NavBarProps) {
       {/* Stacking */}
       <Stack spacing={4}>
         {/* Container */}
-        <Flex
-        onClick={onToggle}
-        py={2}
-        as={'a'}
-        href={href}
-        justify={'space-between'}
-        align={'center'}
-        _hover={{
-          textDecoration: 'none'}}>
-          {/* Options */}
-          <Text
-            fontWeight={'bold'}
-            fontSize={"lg"}
-            px={2}
-            py={1}
-            color={useColorModeValue('black', 'white')}
-            rounded={"md"}
+        <Link href={`${href}`}>
+          <Flex
+            onClick={onToggle}
+            py={2}
+            justify={'space-between'}
+            align={'center'}
             _hover={{
-              textDecoration: "none",
-              color: useColorModeValue('brown', 'yellow.400')}}>
-            {name}
-          </Text>
-        </Flex>
+            textDecoration: 'none'}}>
+            {/* Options */}
+            <Text
+              fontWeight={'bold'}
+              fontSize={"lg"}
+              px={2}
+              py={1}
+              color={useColorModeValue('black', 'white')}
+              rounded={"md"}
+              _hover={{
+                textDecoration: "none",
+                color: useColorModeValue('brown', 'yellow.400')}}>
+              {name}
+            </Text>
+          </Flex>
+        </Link>
         {/* Collapse */}
         <Collapse
           in={isOpen}
@@ -44,7 +45,6 @@ function MobileNavLink(props: NavBarProps) {
           animateOpacity>
         {/* Stack inside Menu */}  
         <Stack
-          mt={2}
           pl={4}
           color={'black'}
           fontWeight={500}>  
@@ -62,7 +62,7 @@ export default function MobileNav() {
       {/* Stack */} 
       <Stack
         bg={useColorModeValue('white', 'gray.700')}
-        p={4}
+        p={3}
         display={{ md: 'none' }}>
         {/* Render of MobileNavLink */} 
         {Links.map((link) => (

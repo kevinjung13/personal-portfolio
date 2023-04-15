@@ -1,4 +1,5 @@
-import { Link, Image, useColorMode, useColorModeValue } from "@chakra-ui/react";
+import Link from 'next/link';
+import { Image, useColorMode, useColorModeValue } from "@chakra-ui/react";
 
 export default function Logo() {
 
@@ -7,16 +8,16 @@ export default function Logo() {
   return (
     <>
       <Link
-        href={'/main'}
-        _hover={{
-        bg: useColorModeValue('none', 'navbar.background'),
-        opacity: (colorMode === 'light' ? '50%' : 'none')}}>
+        href={'/'}>
         {/* Logo Image */}
         <Image
           alt={'logo'}
           w={'50'}
           h={'50'}
-          src={colorMode === 'light' ? '../photos/logo-black.png' : '../photos/logo-white.png'}>
+          src={colorMode === 'light' ? '../photos/logo-black.png' : '../photos/logo-white.png'}
+          _hover={{
+            bg: useColorModeValue('none', 'navbar.background'),
+            opacity: (colorMode === 'light' ? '50%' : 'none')}}>
         </Image>
       </Link>
     </>

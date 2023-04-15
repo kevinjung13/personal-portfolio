@@ -12,21 +12,7 @@ import '@fontsource/figtree/700.css';
 
 const theme = extendTheme({
   colors: {
-
-    navbar: {
-      background: "#2e5166"
-    }, 
     
-    footer: {
-      background: "#2B2D42",
-
-    icons: {
-        twitter: "#1DA1F2",
-        github: "#6E5494",
-        linkedin: "#0072b1",
-        email: "#EB8778"
-      }
-    },
 
   },
 

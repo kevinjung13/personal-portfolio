@@ -1,4 +1,4 @@
-import { Button, Stack, useColorModeValue } from '@chakra-ui/react';
+import { Button, Link, Stack } from '@chakra-ui/react';
 import { FaTwitter, FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 /* Icon Props */
@@ -21,22 +21,24 @@ function SocialButton(props: SocialButtonProps) {
   const { URL, bgColor, fontColor, hoverColor, icon, target } = props;  
 
   return (
-    <Button
-      as={'a'}
+    <Link
       href={URL}
-      bg={bgColor}
-      color={fontColor}
-      _hover={{ bg: 'none', color: hoverColor }}
       target={target}
-      size={'md'}
-      cursor={'pointer'}
-      display={'inline-flex'}
-      alignItems={'center'}
-      justifyContent={'center'}
-      transition={'background 0.3s ease'}
-      >
-      {icon}
-    </Button>
+      isExternal>
+      <Button
+        bg={bgColor}
+        color={fontColor}
+        rounded={'full'}
+        _hover={{ bg: 'white', color: hoverColor }}
+        size={'md'}
+        cursor={'pointer'}
+        display={'inline-flex'}
+        alignItems={'center'}
+        justifyContent={'center'}
+        transition={'background 0.3s ease'}>
+        {icon}
+      </Button>
+    </Link>
   );
 }
 
@@ -52,7 +54,7 @@ export default function Icons() {
           target={'_blank'}
           bgColor={'none'}
           fontColor={'none'}
-          hoverColor={'footer.icons.twitter'}
+          hoverColor={'#1DA1F2'}
           icon={<FaTwitter />} />             
         {/* Github Icon */}
         <SocialButton 
@@ -60,7 +62,7 @@ export default function Icons() {
           target={'_blank'}
           bgColor={'none'}
           fontColor={'none'}
-          hoverColor={'footer.icons.github'}
+          hoverColor={'#6E5494'}
           icon={<FaGithub />} />
         {/* Linkedin Icon */}
         <SocialButton 
@@ -68,7 +70,7 @@ export default function Icons() {
           target={'_blank'}
           bgColor={'none'}
           fontColor={'none'}
-          hoverColor={'footer.icons.linkedin'}
+          hoverColor={'#0072b1'}
           icon={<FaLinkedin />} />
         {/* Email Icon */}
         <SocialButton
@@ -76,7 +78,7 @@ export default function Icons() {
           target={'_blank'}
           bgColor={'none'}
           fontColor={'none'}
-          hoverColor={'footer.icons.email'}
+          hoverColor={'#EB8778'}
           icon={<FaEnvelope />} />
       </Stack>
     </>

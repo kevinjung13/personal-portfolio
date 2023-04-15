@@ -14,7 +14,7 @@ export default function Footer() {
       spacing={4}
       justify={'center'}
       align={'center'}
-      bg={useColorModeValue('black', 'footer.background')}
+      bg={useColorModeValue('black', '#2B2D42')}
       color={useColorModeValue('white', 'gray.200')}>
       {/* Text */}
       <Text>© 2023 - Built by Kevin Jung </Text>

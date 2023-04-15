@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { NavBarProps } from "..";
 import { Links } from "..";
 import { Box, Stack, Text, useColorMode } from "@chakra-ui/react";
@@ -13,21 +14,21 @@ function DesktopItem(props: NavBarProps) {
       {/* Stacking */}
       <Stack direction={'row'} align={'center'}>
         {/* Container */}
-        <Box
-          as={'a'}
-          href={href}
-          p={2}
-          rounded={'md'}
-          _hover={{ bg: 'none' }}>
-          {/* Options */}
-            <Text
-              transition={'all .3s ease'}
-              fontWeight={'bold'}
-              fontSize={'lg'}
-              _hover={{color: (colorMode === 'light' ? 'brown' : 'yellow.400')}}>
-              {name}
-            </Text>
-        </Box>
+        <Link href={`${href}`}>
+          <Box
+            p={2}
+            rounded={'md'}
+            _hover={{ bg: 'none' }}>
+            {/* Options */}
+              <Text
+                transition={'all .3s ease'}
+                fontWeight={'bold'}
+                fontSize={'lg'}
+                _hover={{color: (colorMode === 'light' ? 'brown' : 'yellow.400')}}>
+                {name}
+              </Text>
+          </Box>
+        </Link>
       </Stack>
     </>
   );
