@@ -35,12 +35,11 @@ export default function Card (props: CardProps) {
         bg={background}>
         {/* This is the block you need to change, to customize the caption */}
         <Container
-          size={'container.lg'}
+          size={'100%'}
           height={'600px'}
           position={'relative'}>
           <Stack
-            spacing={6}
-            w={'full'}
+            spacing={5}
             maxW={'lg'}
             position={'absolute'}
             top={'50%'}

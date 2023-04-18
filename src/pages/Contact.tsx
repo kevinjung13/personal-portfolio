@@ -91,7 +91,7 @@ export default function Contact() {
                   <ProjectButton
                     type={'submit'}
                     target={"none"}
-                    bgColor={useColorModeValue("blue.400", "navbar.background")}
+                    bgColor={useColorModeValue("blue.400", "charcoal.700")}
                     fontColor={useColorModeValue("gray.100", "white")}
                     text={"Send Message"}
                     hoverColor={"red.500"} />

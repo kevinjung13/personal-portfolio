@@ -1,4 +1,4 @@
-import { Button, Link, Stack } from '@chakra-ui/react';
+import { Button, IconButton, Link, Stack } from '@chakra-ui/react';
 import { FaTwitter, FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 /* Icon Props */
@@ -25,19 +25,19 @@ function SocialButton(props: SocialButtonProps) {
       href={URL}
       target={target}
       isExternal>
-      <Button
+      <IconButton
+        aria-label={'social-button'}
         bg={bgColor}
         color={fontColor}
         rounded={'full'}
-        _hover={{ bg: 'white', color: hoverColor }}
         size={'md'}
+        _hover={{ bg: 'white', color: hoverColor, }}
         cursor={'pointer'}
-        display={'inline-flex'}
         alignItems={'center'}
         justifyContent={'center'}
         transition={'background 0.3s ease'}>
         {icon}
-      </Button>
+      </IconButton>
     </Link>
   );
 }

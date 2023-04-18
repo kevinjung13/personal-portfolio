@@ -40,9 +40,9 @@ export default function Home() {
                 <Heading fontSize={{ base: "3xl", md: "5xl", lg: "5xl" }}>
                   <Text color={{ base: "gray.900", md: "white" }} as={"span"}>
                     Hi, My Name is
-                  </Text>{" "}
+                  </Text>
                   <br />
-                  <Text as={"span"} color={{ base: "white", md: "black" }}>
+                  <Text color={{ base: "white", md: "black" }}>
                     Kevin Jung
                   </Text>
                 </Heading>

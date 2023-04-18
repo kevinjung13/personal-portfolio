@@ -51,7 +51,7 @@ export default function About() {
             </Box>
             {/* Button */}
             <ProjectButton
-              bgColor={useColorModeValue("blue.400", "navbar.background")}
+              bgColor={useColorModeValue("blue.400", "charcoal.700")}
               fontColor={"white"}
               text={"Resume"}
               hoverColor={"red.500"}

@@ -16,7 +16,7 @@ export default function Logo() {
           h={'50'}
           src={colorMode === 'light' ? '../photos/logo-black.png' : '../photos/logo-white.png'}
           _hover={{
-            bg: useColorModeValue('none', 'navbar.background'),
+            bg: useColorModeValue('none', 'charcoal.700'),
             opacity: (colorMode === 'light' ? '50%' : 'none')}}>
         </Image>
       </Link>

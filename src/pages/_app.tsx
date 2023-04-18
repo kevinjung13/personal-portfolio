@@ -1,7 +1,6 @@
 import type { AppProps } from 'next/app';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
-import Header from './components/Navbar';
-import Footer from './components/Footer';
+import Layout from './components/Layout';
 
 // Font
 
@@ -12,8 +11,18 @@ import '@fontsource/figtree/700.css';
 
 const theme = extendTheme({
   colors: {
-    
-
+    "charcoal": {
+      "50": "#EDF3F7",
+      "100": "#CEDFE9",
+      "200": "#AECADB",
+      "300": "#8FB5CC",
+      "400": "#6FA0BE",
+      "500": "#4F8CB0",
+      "600": "#3F708D",
+      "700": "#305469",
+      "800": "#203846",
+      "900": "#101C23"
+    }
   },
 
   fonts: {
@@ -35,9 +44,9 @@ const theme = extendTheme({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
-      <Header />
+      <Layout>
       <Component {...pageProps} />
-      <Footer />
+      </Layout>
    </ChakraProvider>
   )
 }
