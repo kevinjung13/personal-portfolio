@@ -43,7 +43,7 @@ export default function DesktopNav() {
       <Stack direction={'row'} spacing={4}>
         {/* Rendering Navbar Items */}
         {Links.map((link) => (
-          <DesktopItem {...link} />))}   
+          <DesktopItem key={link.name} {...link} />))}   
       </Stack> 
     </>
   );

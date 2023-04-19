@@ -66,7 +66,7 @@ export default function MobileNav() {
         display={{ md: 'none' }}>
         {/* Render of MobileNavLink */} 
         {Links.map((link) => (
-          <MobileNavLink {...link} />))}
+          <MobileNavLink key={link.name} {...link} />))}
       </Stack>
     </>
   );
