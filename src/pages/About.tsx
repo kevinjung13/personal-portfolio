@@ -63,7 +63,7 @@ export default function About() {
             <Image
               rounded={"md"}
               alt={"profile image"}
-              src={"/photos/profile.jpg"}
+              src={"/photos/profile-pic.jpg"}
               objectFit={"cover"}/>
           </Flex>
         </SimpleGrid>
