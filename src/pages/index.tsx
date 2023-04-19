@@ -56,7 +56,7 @@ export default function Home() {
                 {/* Stacking of Button */}
                 <Stack direction={"row"}>
                   <ProjectButton
-                    URL={"/about"}
+                    URL={"/About"}
                     bgColor={"blue.400"}
                     fontColor={"white"}
                     text={"Introduction"}
