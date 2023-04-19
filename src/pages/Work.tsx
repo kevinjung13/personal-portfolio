@@ -73,7 +73,8 @@ export default function Work() {
       </IconButton>
 
       {/* Slider */}
-        <Slider {...settings} ref={(slider) => setSlider(slider)}>
+        <Slider {...settings}
+          ref={(slider) => setSlider(slider)}>
           <Card
             title={'Conversor'}
             description={'A Currency Exchange Website'}
