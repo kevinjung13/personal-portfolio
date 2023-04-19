@@ -14,7 +14,7 @@ export default function Home() {
       <main>
         {/* Box for whole main section + background image */}
         <Box
-          bgImage={{ base: "url('/photos/main.bg.small.jpg')", md: "url('/photos/main.bg.jpg')" }}
+          bgImage={{ base: "url('/photos/main-bg-small.jpg')", md: "url('/photos/main-bg.jpg')" }}
           bgPosition={"center"}
           bgSize={"cover"}
           bgRepeat={"no-repeat"}>
