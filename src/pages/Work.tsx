@@ -17,7 +17,9 @@ const settings = {
   arrows: false,
   fade: true,
   infinite: true,
+  autoplay: true,
   speed: 500,
+  autoplaySpeed: 5000,
   slidesToShow: 1,
   slidesToScroll: 1,
 };
@@ -34,45 +36,41 @@ export default function Work() {
     <>
       {/* Container */}
       <Box
-      id={'work'}
-      position={'relative'}
-      height={'600px'}
-      width={'full'}
-      overflow={'hidden'}>
-
-      {/* Left Icon */}
-      <IconButton
-        aria-label="left-arrow"
-        bg={'none'}
-        position="absolute"
-        left={side}
-        top={top}
-        transform={'translate(0%, -50%)'}
-        zIndex={2}
-        onClick={() => slider?.slickPrev()}
-        color={'white'}
-        _hover={{
-          bg: 'whiteAlpha.300'}}>
-        <BiLeftArrowAlt size="40px" />
-      </IconButton>
-
-      {/* Right Icon */}
-      <IconButton
-        aria-label="right-arrow"
-        bg={'none'}
-        position="absolute"
-        right={side}
-        top={top}
-        transform={'translate(0%, -50%)'}
-        zIndex={2}
-        onClick={() => slider?.slickNext()}
-        color={'white'}
-        _hover={{
-          bg: 'whiteAlpha.300'}}>
-        <BiRightArrowAlt size="40px" />
-      </IconButton>
-
-      {/* Slider */}
+        id={'work'}
+        position={'relative'}
+        width={'full'}
+        overflow={'hidden'}>
+        {/* Left Icon */}
+        <IconButton
+          aria-label="left-arrow"
+          bg={'none'}
+          position="absolute"
+          left={side}
+          top={top}
+          transform={'translate(0%, -50%)'}
+          zIndex={2}
+          onClick={() => slider && slider.slickPrev()}
+          color={'white'}
+          _hover={{
+            bg: 'whiteAlpha.300'}}>
+          <BiLeftArrowAlt size="40px" />
+        </IconButton>
+        {/* Right Icon */}
+        <IconButton
+          aria-label="right-arrow"
+          bg={'none'}
+          position="absolute"
+          right={side}
+          top={top}
+          transform={'translate(0%, -50%)'}
+          zIndex={2}
+          onClick={() => slider && slider.slickNext()}
+          color={'white'}
+          _hover={{
+            bg: 'whiteAlpha.300'}}>
+          <BiRightArrowAlt size="40px" />
+        </IconButton>
+        {/* Slider */}
         <Slider {...settings}
           ref={(slider) => setSlider(slider)}>
           <Card
@@ -102,7 +100,7 @@ export default function Work() {
             background={'gray.800'}
             heading={'white'}
             text={'white'} />
-      </Slider>
+        </Slider>
       </Box>
     </>
   );

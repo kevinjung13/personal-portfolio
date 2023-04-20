@@ -33,7 +33,7 @@ export default function Card (props: CardProps) {
         bgPosition="center"
         bgSize="cover"
         bg={background}>
-        {/* This is the block you need to change, to customize the caption */}
+        {/*  */}
         <Container
           size={'100%'}
           height={'600px'}
@@ -62,7 +62,7 @@ export default function Card (props: CardProps) {
               bgColor={'blue.400'}
               fontColor={'white'}
               text={'See Project'}
-              hoverColor={'red.500'} /> 
+              hoverColor={'red.500'} />
           </Stack>
         </Container>
       </Box>
