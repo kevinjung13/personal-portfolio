@@ -21,7 +21,7 @@ function MobileNavLink(props: NavBarProps) {
       {/* Stacking */}
       <Stack spacing={4}>
         {/* Container */}
-        <Link href={`/${href}`}>
+        <Link href={`${href}`}>
           <Flex
             onClick={onToggle}
             py={2}

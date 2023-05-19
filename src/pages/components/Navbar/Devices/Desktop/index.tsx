@@ -16,7 +16,7 @@ function DesktopItem(props: NavBarProps) {
       {/* Stacking */}
       <Stack direction={"row"} align={"center"}>
         {/* Container */}
-        <Link href={`/${href}`}>
+        <Link href={`${href}`}>
           <Box p={2} rounded={"md"} _hover={{ bg: "none" }}>
             {/* Options */}
             <Text

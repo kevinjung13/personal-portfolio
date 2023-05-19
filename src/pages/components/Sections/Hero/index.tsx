@@ -11,11 +11,11 @@ export default function Hero() {
       {/* Box for whole main section + background image */}
       <Box
         bgImage={colorMode === 'light' ? {
-          base: "url('/photos/main-bg-small.jpg')",
+          base: "url('/photos/main-bg-light-small.jpg')",
           md: "url('/photos/main-bg-light.jpg')"
         } : {
-          base: "url('/photos/main-bg-small.jpg')",
-          md: "url('/photos/main-bg-dark.jpg')"
+          base: "url('/photos/dark/main-bg-dark-small.jpg')",
+          md: "url('/photos/dark/main-bg-dark.jpg')"
           }}
         bgPosition={"center"}
         bgSize={"cover"}
@@ -26,47 +26,44 @@ export default function Hero() {
           minH={"100vh"}
           direction={"row"}
           p={{ base: 15, md: 15 }}
-          justify={{ base: "center", md: "start" }}
-        >
+          justify={{ base: "center", md: "start" }}>
           {/* Container for text and buttons */}
           <Flex
             direction={"row"}
             align={{ base: "end", md: "center" }}
-            justify={"center"}
-          >
+            justify={"center"}>
             {/* Stacking */}
             <Stack
-              p={8}
+              ml={{ base: "none", md: "15" }}
+              p={{ base: "3", md: "8" }}
+              mt={{ base: "5", md: "none" }}
               spacing={6}
               w={"full"}
               maxW={"lg"}
-              opacity={{ base: "100%", md: "none" }}
-            >
+              opacity={{ base: "100%", md: "none" }}>
               {/* Heading */}
-              <Heading fontSize={{ base: "3xl", md: "5xl", lg: "5xl" }}>
-                <Text color={{ base: "gray.900", md: "white" }} as={"span"}>
-                  Hi, My Name is
+              <Heading fontSize={{ base: "3xl", md: "5xl", lg: "6xl" }}
+                color={{ base: "white", md: "white" }}>
+                Hi, My Name is
+                <Text color={{ base: "black", md: "black" }}>
+                  Kevin
                 </Text>
-                <br />
-                <Text color={{ base: "white", md: "black" }}>Kevin Jung</Text>
               </Heading>
               {/* Description */}
               <Text
-                color={{ base: "white", md: "gray.600" }}
+                color={{ base: "white", md: "text.600" }}
                 fontSize={{ base: "md", md: "lg", lg: "lg" }}
-                fontWeight={"bold"}
-              >
+                fontWeight={"bold"}>
                 Front End Developer
               </Text>
               {/* Stacking of Button */}
               <Stack direction={"row"}>
                 <ProjectButton
-                  URL={"/About"}
-                  bgColor={useColorModeValue("blue.400", "charcoal.700")}
+                  URL={"#about"}
+                  bgColor={useColorModeValue("charcoal.700", "charcoal.700")}
                   fontColor={"white"}
                   text={"Introduction"}
-                  hoverColor={"red.500"}
-                />
+                  hoverColor={"red.500"}/>
               </Stack>
             </Stack>
           </Flex>
