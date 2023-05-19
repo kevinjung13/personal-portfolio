@@ -1,4 +1,4 @@
-import Header from '../Navbar';
+import Navbar from '../Navbar';
 import Footer from '../Footer';
 import { Container } from '@chakra-ui/react';
 import { ReactNode } from 'react';
@@ -13,8 +13,10 @@ export default function Layout(props: LayoutProps) {
 
   return (
     <>
-      <Header />
-      <Container maxW={'100%'} p={'0'}>
+      <Container
+        maxW={'100%'}
+        p={'0'}>
+      <Navbar />
       {children}
       </Container>
       <Footer />

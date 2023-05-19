@@ -1,5 +1,4 @@
-import Link from 'next/link';
-import { Button } from "@chakra-ui/react";
+import { Button, Link } from "@chakra-ui/react";
 
 /* Button Props */
 
@@ -25,9 +24,12 @@ export default function ProjectButton(props: ButtonProps) {
 
   return (
     <>
-      <Link href={`${URL}`} target={target}>
+      <Link
+        href={`${URL}`}
+        target={target}
+        isExternal>
         <Button
-          w={'fit-content'}
+          w={'fit'}
           rounded={'full'}
           bg={bgColor}
           color={fontColor}

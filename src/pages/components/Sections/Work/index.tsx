@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import Card from './components/Card';
+import Card from '../../Card';
 /* Chakra UI Components */
 import { Box, IconButton, useBreakpointValue} from '@chakra-ui/react';
 /* Icons from React-icons */
@@ -27,7 +27,10 @@ const settings = {
 export default function Work() {
   
     /* Slider State */
-  const [slider, setSlider] = useState<Slider | null>(null);
+  const [slider, setSlider] = useState<Slider | null>();
+  const [hoveredCardIndex, setHoveredCardIndex] = useState<number | null>(
+    null
+  );
     /* Breakpoints for arrow button positioning */
   const top = useBreakpointValue({ base: '90%', md: '50%' });
   const side = useBreakpointValue({ base: '30%', md: '40px' });
@@ -83,8 +86,8 @@ export default function Work() {
             heading={'white'}
             text={'white'} />
           <Card
-            title={'Oasis Marketplace (On-going Project)'}
-            description={'An Open Source AI NFT Marketplace. Created all Front End related components, layouts and functions'}
+            title={'Oasis Marketplace'}
+            description={'An Open Source AI NFT Marketplace'}
             link={'https://vercel.com/jeromevvb/oasis-marketplace/8WQ3B7psLPCsbMrLQHftCzE3mT8E'}
             target={'_blank'}
             program={'Next Js, Chakra UI & TypeScript'}
@@ -92,11 +95,11 @@ export default function Work() {
             heading={'white'}
             text={'white'} />
           <Card
-            title={'Project 3'}
-            description={'Coming Soon'}
-            link={'https://www.google.com'}
+            title={'Farang'}
+            description={'Expat Guide for Bangkok Expats'}
+            link={'https://expat-guide.vercel.app/'}
             target={'_blank'}
-            program={'Next Js, Float UI, Tailwind CSS, Storybook'}
+            program={'Next Js, Float UI, Tailwind CSS'}
             background={'gray.800'}
             heading={'white'}
             text={'white'} />

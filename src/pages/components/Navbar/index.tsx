@@ -1,11 +1,18 @@
-import Logo from "./logo";
-import DarkMode from "./mode";
-import DesktopNav from "./Devices/desktop";
-import MobileNav from "./Devices/mobile";
+import DesktopNav from "./Devices/Desktop";
+import MobileNav from "./Devices/Mobile";
+import Logo from "./Logo";
+import DarkMode from "./DarkMode";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
-import { Box, Collapse, Flex, IconButton, useColorModeValue, useDisclosure } from "@chakra-ui/react";
+import {
+  Box,
+  Collapse,
+  Flex,
+  IconButton,
+  useColorModeValue,
+  useDisclosure
+} from "@chakra-ui/react";
 
-/* 1. Header Props */
+/* Navbar Props */
 
 export interface NavBarProps {
   name: string;
@@ -14,74 +21,138 @@ export interface NavBarProps {
   href?: string;
 }
 
-/* 2. Object with Header options */
+/* 2. Object with Navbar options */
 
 export const Links = [
-
   {
     name: "About",
-    href: "About",
+    href: "#about",
   },
 
   {
     name: "Work",
-    href: "Work",
+    href: "#work",
   },
 
   {
     name: "Contact",
-    href: "Contact",
-  }];
+    href: "#contact",
+  },
+];
 
-export default function Header() {
+function NavbarOptions() {
 
-// Menu Button Opening/Closing Function
-  const { isOpen, onOpen, onClose} = useDisclosure();
+  // Menu Button Opening/Closing Function
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
       {/* Container for whole Navbar */}
-      <Box
-        bg={useColorModeValue('white', 'gray.700')}
-        px={4}>
+      <Box bg={"transparent"} px={4}>
         {/* Container for Navbar content */}
         <Flex
           minH={16}
-          justify={'space-between'}
-          align={'center'}
+          justify={"space-between"}
+          align={"center"}
           py={{ base: 2 }}
-          px={{ base: 4 }}>
+          px={{ base: 4 }}
+        >
           {/* Logo */}
           <Logo />
           {/* Mobile Container for Light/Dark Mode and Options */}
-          <Flex display={{base: 'flex', md: 'none'}}>
+          <Flex display={{ base: "flex", md: "none" }}>
             {/* Light/Dark Mode Toggler */}
             <DarkMode />
             {/* Hamburger Icon */}
             <IconButton
               minW={0}
               onClick={isOpen ? onClose : onOpen}
-              icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />}
-              variant={'ghost'}
-              aria-label={'Open Menu'}
+              icon={
+                isOpen ? (
+                  <CloseIcon w={3} h={3} />
+                ) : (
+                  <HamburgerIcon w={5} h={5} />
+                )
+              }
+              variant={"ghost"}
+              aria-label={"Open Menu"}
               size={"md"}
-              color={useColorModeValue('black', 'white')}
+              color={useColorModeValue("black", "white")}
               _hover={{
-                bg: 'none',
-                color: useColorModeValue('brown', 'yellow.400')}} />
+                bg: "none",
+                color: useColorModeValue("brown", "yellow.400"),
+              }}
+            />
           </Flex>
           {/* Desktop Container for Light/Dark Mode and Options */}
-          <Flex display={{ base: 'none', md: 'flex' }} align={'center'}>
+          <Flex display={{ base: "none", md: "flex" }} align={"center"}>
             <DarkMode />
             <DesktopNav />
           </Flex>
         </Flex>
-       {/* Display of Options on Mobile Devices */}
-       <Collapse in={isOpen} animateOpacity>
+        {/* Display of Options on Mobile Devices */}
+        <Collapse in={isOpen} animateOpacity>
+          <MobileNav />
+        </Collapse>
+      </Box>
+    </>
+  )
+}
+
+export default function Navbar() {
+  // Menu Button Opening/Closing Function
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  return (
+    <>
+      {/* Container for whole Navbar */}
+      <Box bg={"transparent"} px={4}>
+        {/* Container for Navbar content */}
+        <Flex
+          minH={16}
+          justify={"space-between"}
+          align={"center"}
+          py={{ base: 2 }}
+          px={{ base: 4 }}
+        >
+          {/* Logo */}
+          <Logo />
+          {/* Mobile Container for Light/Dark Mode and Options */}
+          <Flex display={{ base: "flex", md: "none" }}>
+            {/* Light/Dark Mode Toggler */}
+            <DarkMode />
+            {/* Hamburger Icon */}
+            <IconButton
+              minW={0}
+              onClick={isOpen ? onClose : onOpen}
+              icon={
+                isOpen ? (
+                  <CloseIcon w={3} h={3} />
+                ) : (
+                  <HamburgerIcon w={5} h={5} />
+                )
+              }
+              variant={"ghost"}
+              aria-label={"Open Menu"}
+              size={"md"}
+              color={useColorModeValue("black", "white")}
+              _hover={{
+                bg: "none",
+                color: useColorModeValue("brown", "yellow.400"),
+              }}
+            />
+          </Flex>
+          {/* Desktop Container for Light/Dark Mode and Options */}
+          <Flex display={{ base: "none", md: "flex" }} align={"center"}>
+            <DarkMode />
+            <DesktopNav />
+          </Flex>
+        </Flex>
+        {/* Display of Options on Mobile Devices */}
+        <Collapse in={isOpen} animateOpacity>
           <MobileNav />
         </Collapse>
       </Box>
     </>
   );
 }
-    

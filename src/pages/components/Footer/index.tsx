@@ -1,5 +1,5 @@
 import { Box, Stack, Text, useColorModeValue } from '@chakra-ui/react';
-import Icons from './icons';
+import Icons from './Icons';
 
 export default function Footer() {
   
