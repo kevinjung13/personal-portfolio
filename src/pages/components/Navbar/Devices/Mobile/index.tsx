@@ -27,17 +27,14 @@ function MobileNavLink(props: NavBarProps) {
             py={2}
             justify={"space-between"}
             align={"center"}
-            _hover={{
-              textDecoration: "none",
-            }}
-          >
+            _hover={{textDecoration: "none"}}>
             {/* Options */}
             <Text
               fontWeight={"bold"}
               fontSize={"lg"}
               px={2}
               py={1}
-              color={useColorModeValue("black", "white")}
+              color={useColorModeValue("white", "black")}
               rounded={"md"}
               _hover={{
                 textDecoration: "none",
@@ -68,7 +65,7 @@ export default function Mobile() {
     <>
       {/* Stack */}
       <Stack
-        bg={useColorModeValue("white", "gray.700")}
+        bg={useColorModeValue("charcoal.300", "gray.700")}
         p={3}
         display={{ md: "none" }}
       >

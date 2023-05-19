@@ -16,7 +16,6 @@ export default function Layout(props: LayoutProps) {
       <Container
         maxW={'100%'}
         p={'0'}>
-      <Navbar />
       {children}
       </Container>
       <Footer />

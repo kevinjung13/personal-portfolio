@@ -1,19 +1,26 @@
 import ProjectButton from "../../Button";
-import { Box, Flex, Heading, Stack, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Stack, Text, useColorMode, useColorModeValue } from "@chakra-ui/react";
+import Navbar from "../../Navbar";
 
 export default function Hero() {
+
+  const { colorMode } = useColorMode()
+
   return (
     <>
       {/* Box for whole main section + background image */}
       <Box
-        bgImage={{
+        bgImage={colorMode === 'light' ? {
           base: "url('/photos/main-bg-small.jpg')",
-          md: "url('/photos/main-bg.jpg')",
-        }}
+          md: "url('/photos/main-bg-light.jpg')"
+        } : {
+          base: "url('/photos/main-bg-small.jpg')",
+          md: "url('/photos/main-bg-dark.jpg')"
+          }}
         bgPosition={"center"}
         bgSize={"cover"}
-        bgRepeat={"no-repeat"}
-      >
+        bgRepeat={"no-repeat"}>
+        <Navbar />
         {/* Stacking of whole main section */}
         <Stack
           minH={"100vh"}
@@ -55,7 +62,7 @@ export default function Hero() {
               <Stack direction={"row"}>
                 <ProjectButton
                   URL={"/About"}
-                  bgColor={"blue.400"}
+                  bgColor={useColorModeValue("blue.400", "charcoal.700")}
                   fontColor={"white"}
                   text={"Introduction"}
                   hoverColor={"red.500"}
