@@ -21,7 +21,7 @@ export default function Contact() {
     <>
       {/* Container for Whole section */}
       <Flex
-        bg={useColorModeValue("gray.200", "gray.900")}
+        bg={useColorModeValue("gray.300", "gray.900")}
         align="center"
         justify="center"
         id="contact"

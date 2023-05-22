@@ -15,7 +15,10 @@ export default function About() {
   return (
     <>
       {/* Container for whole content */}
-      <Box bg={useColorModeValue("gray.200", "gray.900")} id={"about"}>
+      <Box
+        bg={useColorModeValue("white", "gray.900")}
+        id={"about"}
+        w={"full"}>
         {/* Container for Grid */}
         <Container maxW={"5xl"} py={12}>
           {/* Grid */}

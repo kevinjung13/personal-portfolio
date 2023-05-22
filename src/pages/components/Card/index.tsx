@@ -48,11 +48,11 @@ export default function Card(props: CardProps) {
 
   return (
     <>
-     <Container maxW={'7xl'}>
+     <Container maxW={'full'}>
       <SimpleGrid
         columns={{ base: 1, lg: 2 }}
         spacing={{ base: 8, md: 10 }}
-        py={{ base: 18, md: 24 }}>
+          py={{ base: 18, md: 16 }}>
         <Flex>
           <Image
             rounded={'md'}
@@ -72,7 +72,7 @@ export default function Card(props: CardProps) {
               {title}
             </Heading>
             <Text
-              color={useColorModeValue('gray.900', 'gray.400')}
+              color={useColorModeValue('teal.500', 'teal.300')}
               fontWeight={300}
               fontSize={'2xl'}>
               {description}
@@ -83,7 +83,7 @@ export default function Card(props: CardProps) {
             direction={'column'}
             divider={
               <StackDivider
-                borderColor={useColorModeValue('gray.200', 'gray.600')} />
+                borderColor={useColorModeValue('gray.400', 'gray.600')} />
               }>
             <VStack spacing={{ base: 4, sm: 6 }}>
               <Text fontSize={'lg'}>
@@ -93,7 +93,7 @@ export default function Card(props: CardProps) {
             <Box>
               <Text
                 fontSize={{ base: '16px', lg: '18px' }}
-                color={useColorModeValue('yellow.500', 'yellow.300')}
+                color={useColorModeValue('teal.500', 'teal.300')}
                 fontWeight={'500'}
                 textTransform={'uppercase'}
                 mb={'4'}>
@@ -114,18 +114,16 @@ export default function Card(props: CardProps) {
             <Link
               href={link}
               target={target}>
-          <Button
-            rounded={'none'}
-            w={'full'}
+              <Button
+            rounded={'full'}
+            w={'fit'}
             mt={8}
             size={'lg'}
             py={'7'}
-            bg={useColorModeValue('gray.900', 'gray.50')}
-            color={useColorModeValue('white', 'gray.900')}
-            textTransform={'uppercase'}
+            bg={useColorModeValue('blue.400', 'charcoal.700')}
+            color={"white"}
             _hover={{
-              transform: 'translateY(2px)',
-              boxShadow: 'lg',}}>
+              bg: "red.500"}}>
             See Project
           </Button>
           </Link>
