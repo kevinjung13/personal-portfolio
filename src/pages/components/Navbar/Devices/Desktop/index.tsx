@@ -14,8 +14,9 @@ function DesktopItem(props: NavBarProps) {
       {/* Stacking */}
       <Stack direction={"row"} align={"center"}>
         {/* Container */}
-        <Link href={`${href}`}>
-          <Box p={2} rounded={"md"} _hover={{ bg: "none" }}>
+        <Link
+          href={`${href}`}>
+          <Box p={2} rounded={"md"}>
             {/* Options */}
             <Text
               color={useColorModeValue("black", "white")}

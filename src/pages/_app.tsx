@@ -36,14 +36,11 @@ const theme = extendTheme({
       "900": "#18181B"
     }
   },
-
   fonts: {
     heading: 'Figtree',
     body: 'Figtree'
-  },
-
-}
-) 
+  }
+}) 
 
 /* breakpoints:
   sm: '320px',

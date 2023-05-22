@@ -52,7 +52,8 @@ export default function Card(props: CardProps) {
       <SimpleGrid
         columns={{ base: 1, lg: 2 }}
         spacing={{ base: 8, md: 10 }}
-          py={{ base: 18, md: 16 }}>
+        py={{ base: 18, md: 16 }}>
+        {/* Image */}
         <Flex>
           <Image
             rounded={'md'}
@@ -90,6 +91,7 @@ export default function Card(props: CardProps) {
                 {summary}
               </Text>
             </VStack>
+            {/* List of Tools */}
             <Box>
               <Text
                 fontSize={{ base: '16px', lg: '18px' }}
@@ -99,10 +101,12 @@ export default function Card(props: CardProps) {
                 mb={'4'}>
                 Tools
               </Text>
-              <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
+                <SimpleGrid
+                  columns={{ base: 1, md: 2 }}
+                  spacing={{ base: 2, md: 10 }}>
                 <List spacing={2}>
                   <ListItem>{program1}</ListItem>
-                  <ListItem>{program2}</ListItem>{' '}
+                  <ListItem>{program2}</ListItem>
                 </List>
                 <List spacing={2}>
                   <ListItem>{program3}</ListItem>
@@ -115,18 +119,18 @@ export default function Card(props: CardProps) {
               href={link}
               target={target}>
               <Button
-            rounded={'full'}
-            w={'fit'}
-            mt={8}
-            size={'lg'}
-            py={'7'}
-            bg={useColorModeValue('blue.400', 'charcoal.700')}
-            color={"white"}
-            _hover={{
-              bg: "red.500"}}>
-            See Project
-          </Button>
-          </Link>
+                rounded={'full'}
+                w={'fit'}
+                mt={8}
+                size={'lg'}
+                py={'7'}
+                bg={useColorModeValue('blue.400', 'charcoal.700')}
+                color={"white"}
+                _hover={{
+                  bg: "red.500"}}>
+                See Project
+              </Button>
+            </Link>
         </Stack>
       </SimpleGrid>
     </Container>
