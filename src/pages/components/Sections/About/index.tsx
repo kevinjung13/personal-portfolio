@@ -14,9 +14,9 @@ import {
 export default function About() {
   return (
     <>
-      {/* 👇 Container for whole content */}
+      {/* Container for whole content */}
       <Box bg={useColorModeValue("gray.200", "gray.900")} id={"about"}>
-        {/* 👇 Container for Grid */}
+        {/* Container for Grid */}
         <Container maxW={"5xl"} py={12}>
           {/* Grid */}
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
@@ -26,8 +26,7 @@ export default function About() {
               {/* Container for Texts */}
               <Box
                 color={useColorModeValue("gray.900", "gray.200")}
-                fontSize={"lg"}
-              >
+                fontSize={"lg"}>
                 <Text>
                   Hi, I'm Kevin and I'm passionate about building cool websites
                   (among other things like traveling, hiking and learning new
@@ -47,7 +46,8 @@ export default function About() {
                   (friend & mentor) to build exciting and challenging projects,
                   in order to continue learning and improving my skills. In
                   addition, I have slowly started diving into the world of Back
-                  End Development, in hopes of becoming a Full Stack Developer.
+                  End Development, in hopes of becoming a Full Stack Developer
+                  in the future.
                 </Text>
               </Box>
               {/* Button */}
@@ -57,8 +57,7 @@ export default function About() {
                 text={"Resume"}
                 hoverColor={"red.500"}
                 URL={"/resume/Kevin-Jung-Resume.pdf"}
-                target={"_blank"}
-              />
+                target={"_blank"} />
             </Stack>
             {/* Flex Container for Image */}
             <Flex>
@@ -66,8 +65,7 @@ export default function About() {
                 rounded={"md"}
                 alt={"profile image"}
                 src={"/photos/profile-pic.jpg"}
-                objectFit={"cover"}
-              />
+                objectFit={"cover"} />
             </Flex>
           </SimpleGrid>
         </Container>

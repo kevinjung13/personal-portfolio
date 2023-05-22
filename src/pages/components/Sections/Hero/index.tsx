@@ -1,4 +1,3 @@
-import ProjectButton from "../../Button";
 import { Box, Flex, Heading, Stack, Text, useColorMode, useColorModeValue } from "@chakra-ui/react";
 import Navbar from "../../Navbar";
 
@@ -15,11 +14,11 @@ export default function Hero() {
           md: "url('/photos/main-bg-light.jpg')"
         } : {
           base: "url('/photos/dark/main-bg-dark-small.jpg')",
-          md: "url('/photos/dark/main-bg-dark.jpg')"
-          }}
+          md: "url('/photos/dark/main-bg-dark.jpg')"}}
         bgPosition={"center"}
         bgSize={"cover"}
         bgRepeat={"no-repeat"}>
+        {/* Navbar */}
         <Navbar />
         {/* Stacking of whole main section */}
         <Stack
@@ -30,41 +29,41 @@ export default function Hero() {
           {/* Container for text and buttons */}
           <Flex
             direction={"row"}
-            align={{ base: "end", md: "center" }}
+            align={colorMode === 'light' ? {
+              base: "end", md: "center"
+            } : {
+              base: "top", md: "center"}}
             justify={"center"}>
             {/* Stacking */}
             <Stack
               ml={{ base: "none", md: "15" }}
               p={{ base: "3", md: "8" }}
-              mt={{ base: "5", md: "none" }}
+              mt={useColorModeValue({base: "5", md: "none" }, {base: "20", md: "none"})}
               spacing={6}
-              w={"full"}
-              maxW={"lg"}
-              opacity={{ base: "100%", md: "none" }}>
+              w={"100%"}
+              h={"fit-content"}>
               {/* Heading */}
-              <Heading fontSize={{ base: "3xl", md: "5xl", lg: "6xl" }}
-                color={{ base: "white", md: "white" }}>
+              <Heading
+                fontSize={colorMode === 'light' ? {
+                  base: "4xl", md: "5xl", lg: "6xl"
+                } : {
+                  base: "4xl", sm: "5xl", lg: "6xl"}}
+                color={useColorModeValue("white", "text.800")}>
                 Hi, My Name is
-                <Text color={{ base: "black", md: "black" }}>
+                <Text
+                  color={useColorModeValue({ base: "teal.300", md: "teal.500" }, "teal.300")}
+                  align={{base: "center", md: "left"}}>
                   Kevin
                 </Text>
               </Heading>
               {/* Description */}
               <Text
-                color={{ base: "white", md: "text.600" }}
-                fontSize={{ base: "md", md: "lg", lg: "lg" }}
-                fontWeight={"bold"}>
+                color={useColorModeValue({ base: "gray.100", md: "text.600" }, "gray.100")}
+                fontSize={{base: "lg", md: "xl", lg: "2xl"}}
+                fontWeight={"bold"}
+                align={{base: "center", md: "left"}}>
                 Front End Developer
               </Text>
-              {/* Stacking of Button */}
-              <Stack direction={"row"}>
-                <ProjectButton
-                  URL={"#about"}
-                  bgColor={useColorModeValue("charcoal.700", "charcoal.700")}
-                  fontColor={"white"}
-                  text={"Introduction"}
-                  hoverColor={"red.500"}/>
-              </Stack>
             </Stack>
           </Flex>
         </Stack>

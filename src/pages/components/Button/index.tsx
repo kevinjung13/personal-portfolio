@@ -12,8 +12,8 @@ export interface ButtonProps {
   type?: string;
   download?: string;
   onClick?(event: React.MouseEvent<HTMLElement>): void
-  isDisabled?: boolean
-  isLoading?: boolean
+  isDisabled?: boolean;
+  isLoading?: boolean;
 }
 
 /* Rendering */
@@ -25,7 +25,7 @@ export default function ProjectButton(props: ButtonProps) {
   return (
     <>
       <Link
-        href={`${URL}`}
+        href={URL}
         target={target}
         isExternal>
         <Button

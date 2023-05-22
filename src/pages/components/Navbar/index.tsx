@@ -75,7 +75,7 @@ export default function Navbar() {
               variant={"ghost"}
               aria-label={"Open Menu"}
               size={"md"}
-              color={useColorModeValue("white", "black")}
+              color={useColorModeValue("text.800", "white")}
               _hover={{
                 bg: "none",
                 color: useColorModeValue("brown", "yellow.400"),

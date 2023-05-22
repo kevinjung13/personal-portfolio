@@ -1,13 +1,11 @@
 import Link from "next/link";
 import { NavBarProps } from "../..";
 import { Links } from "../..";
-import { Box, Stack, Text, useColorMode, useColorModeValue} from "@chakra-ui/react";
+import { Box, Stack, Text, useColorModeValue} from "@chakra-ui/react";
 
 /* Navbar Item Function */
 function DesktopItem(props: NavBarProps) {
 
-  /* Color mode */
-  const { colorMode } = useColorMode();
   /* Props */
   const { name, href } = props;
 
@@ -20,11 +18,11 @@ function DesktopItem(props: NavBarProps) {
           <Box p={2} rounded={"md"} _hover={{ bg: "none" }}>
             {/* Options */}
             <Text
-              color={useColorModeValue("white", "black")}
+              color={useColorModeValue("black", "white")}
               transition={"all .3s ease"}
               fontWeight={"bold"}
               fontSize={"lg"}
-              _hover={{ color: colorMode === "light" ? "brown" : "yellow.400" }}>
+              _hover={{ color: useColorModeValue("brown", "yellow.400") }}>
               {name}
             </Text>
           </Box>
