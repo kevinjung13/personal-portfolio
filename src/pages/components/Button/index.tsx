@@ -1,4 +1,5 @@
-import { Button, Link } from "@chakra-ui/react";
+import { Box, Button, Text, Link } from "@chakra-ui/react";
+import { useForm } from '@formspree/react';
 
 /* Button Props */
 
@@ -9,9 +10,8 @@ export interface ButtonProps {
   hoverColor?: string;
   URL?: string;
   target?: string;
-  type?: string;
+  type?: "button" | "submit"
   download?: string;
-  onClick?(event: React.MouseEvent<HTMLElement>): void
   isDisabled?: boolean;
   isLoading?: boolean;
 }
@@ -20,23 +20,25 @@ export interface ButtonProps {
 
 export default function ProjectButton(props: ButtonProps) {
 
-  const { text, bgColor, fontColor, hoverColor, URL, target} = props;
+  const { text, bgColor, fontColor, hoverColor, URL, target, isDisabled, type } = props;
 
-  return (
-    <>
-      <Link
-        href={URL}
-        target={target}
-        isExternal>
-        <Button
-          w={'fit'}
-          rounded={'full'}
-          bg={bgColor}
-          color={fontColor}
-          _hover={{ bg: hoverColor }}>
-          {text}
-        </Button>
-      </Link>
-    </>
-  )
-}
+    return (
+      <>
+        <Link
+          href={URL}
+          target={target}
+          isExternal>
+          <Button
+            w={'fit'}
+            rounded={'full'}
+            bg={bgColor}
+            color={fontColor}
+            isDisabled={isDisabled}
+            type={type}
+            _hover={{ bg: hoverColor }}>
+            {text}
+          </Button>
+        </Link>
+      </>
+    )
+  }
