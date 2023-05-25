@@ -34,7 +34,7 @@ export default function Work() {
           src={"/photos/oasis.jpg"}
           title={"Oasis Marketplace"}
           description={"Open Source AI NFT Marketplace"}
-          link={"https://vercel.com/jeromevvb/oasis-marketplace/8WQ3B7psLPCsbMrLQHftCzE3mT8E"}
+          link={"https://oasis-marketplace-pxk6wnbo8-jeromevvb.vercel.app/"}
           target={"_blank"}
           program1={"Next Js"}
           program2={"Chakra UI"}

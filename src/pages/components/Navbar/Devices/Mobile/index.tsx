@@ -6,7 +6,6 @@ import {
   Flex,
   Stack,
   Text,
-  useColorMode,
   useColorModeValue,
   useDisclosure,
 } from "@chakra-ui/react";
@@ -60,15 +59,12 @@ function MobileNavLink(props: NavBarProps) {
 
 /* 4. Rending of Options on Mobile Devices */
 export default function Mobile() {
-
-  const { colorMode } = useColorMode()
   
   return (
     <>
       {/* Stack */}
       <Stack
         bg={useColorModeValue("charcoal.300", "gray.700")}
-        minH={colorMode === 'light' ? "fit-content" : "none"}
         p={3}
         display={{ md: "none" }}>
         {/* Render of MobileNavLink */}
