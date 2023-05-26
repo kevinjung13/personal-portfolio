@@ -11,6 +11,7 @@ export interface ButtonProps {
   type?: "button" | "submit"
   isDisabled?: boolean;
   isLoading?: boolean;
+  loadingText?: string;
   onClick?: () => void;
   size?: string;
 }
@@ -27,6 +28,7 @@ export default function ProjectButton(props: ButtonProps) {
     target,
     isDisabled,
     isLoading,
+    loadingText,
     size,
     type,
     onClick
@@ -43,6 +45,7 @@ export default function ProjectButton(props: ButtonProps) {
             rounded={'full'}
             bg={bgColor}
             color={fontColor}
+            loadingText={loadingText}
             isDisabled={isDisabled}
             isLoading={isLoading}
             type={type}
