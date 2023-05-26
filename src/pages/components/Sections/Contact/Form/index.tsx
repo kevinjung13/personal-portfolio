@@ -16,18 +16,10 @@ import {
   useColorModeValue
 } from '@chakra-ui/react';
 
-/* Form Props for FormSpree */
-interface FormProps {
-  formEndpoint: string;
-  onSubmit?: () => void;
-}
-
-export default function Form(props: FormProps) {
-
-  /* Props */
-  const { formEndpoint, onSubmit } = props;
+export default function Form() {
+  
   /* useForm for FormSpree */
-  const [state, handleSubmit] = useForm(formEndpoint);
+  const [state, handleSubmit] = useForm("mdovvdeq");
   /* State for Loading */
   const [isLoading, setIsLoading] = useState(false)
 

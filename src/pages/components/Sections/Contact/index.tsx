@@ -48,8 +48,7 @@ export default function Contact() {
                   {/* Stacking of form items */}
                   <VStack spacing={5} >
                     {/* Form */}
-                    <Form
-                      formEndpoint={"mdovvdeq"} />
+                    <Form />
                   </VStack>
                 </Box>
               </Stack>
