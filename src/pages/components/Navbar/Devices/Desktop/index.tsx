@@ -3,7 +3,7 @@ import { NavBarProps } from "../..";
 import { Links } from "../..";
 import { Box, Stack, Text, useColorModeValue} from "@chakra-ui/react";
 
-/* Navbar Item Function */
+/* Function for Navbar Items */
 function DesktopItem(props: NavBarProps) {
 
   /* Props */

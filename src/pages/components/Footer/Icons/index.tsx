@@ -1,8 +1,7 @@
-import { Button, IconButton, Link, Stack } from '@chakra-ui/react';
+import { IconButton, Link, Stack } from '@chakra-ui/react';
 import { FaTwitter, FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 /* Icon Props */
-
 interface SocialButtonProps {
   name?: string;
   icon: JSX.Element;
@@ -15,7 +14,6 @@ interface SocialButtonProps {
 }
 
 /* Function for Icon rendering */
-
 function SocialButton(props: SocialButtonProps) {
 
   const { URL, bgColor, fontColor, hoverColor, icon, target } = props;  
@@ -42,11 +40,12 @@ function SocialButton(props: SocialButtonProps) {
   );
 }
 
+/* Rendering of all Icons */
 export default function Icons() {
 
   return (
     <>
-      {/* 👇 Stacking of Responsive Icons */}
+      {/* Stacking of Icons */}
       <Stack direction={'row'} spacing={6}>
         {/* Twitter Icon */}
         <SocialButton

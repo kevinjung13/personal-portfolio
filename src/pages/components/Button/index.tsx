@@ -1,8 +1,6 @@
-import { Box, Button, Text, Link } from "@chakra-ui/react";
-import { useForm } from '@formspree/react';
+import { Button, Link } from "@chakra-ui/react";
 
 /* Button Props */
-
 export interface ButtonProps {
   text: string;
   bgColor: string;
@@ -11,16 +9,28 @@ export interface ButtonProps {
   URL?: string;
   target?: string;
   type?: "button" | "submit"
-  download?: string;
   isDisabled?: boolean;
   isLoading?: boolean;
+  onClick?: () => void;
+  size?: string;
 }
 
 /* Rendering */
-
 export default function ProjectButton(props: ButtonProps) {
 
-  const { text, bgColor, fontColor, hoverColor, URL, target, isDisabled, type } = props;
+  const {
+    text,
+    bgColor,
+    fontColor,
+    hoverColor,
+    URL,
+    target,
+    isDisabled,
+    isLoading,
+    size,
+    type,
+    onClick
+  } = props;
 
     return (
       <>
@@ -34,11 +44,15 @@ export default function ProjectButton(props: ButtonProps) {
             bg={bgColor}
             color={fontColor}
             isDisabled={isDisabled}
+            isLoading={isLoading}
             type={type}
-            _hover={{ bg: hoverColor }}>
+            size={size}
+            _hover={{ bg: hoverColor }}
+            onClick={onClick}>
             {text}
           </Button>
         </Link>
       </>
     )
   }
+  

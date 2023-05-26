@@ -10,7 +10,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 
-/* 3. Rendering of Options */
+/* Function for Navbar Items */
 function MobileNavLink(props: NavBarProps) {
 
   const { name, href } = props;
@@ -38,8 +38,7 @@ function MobileNavLink(props: NavBarProps) {
               rounded={"md"}
               _hover={{
                 textDecoration: "none",
-                color: useColorModeValue("brown", "yellow.400"),
-              }}>
+                color: useColorModeValue("brown", "yellow.400") }}>
               {name}
             </Text>
           </Flex>
@@ -57,7 +56,7 @@ function MobileNavLink(props: NavBarProps) {
   );
 }
 
-/* 4. Rending of Options on Mobile Devices */
+/* Mobile Navbar */
 export default function Mobile() {
   
   return (

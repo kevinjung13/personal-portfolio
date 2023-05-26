@@ -13,7 +13,6 @@ import {
 } from "@chakra-ui/react";
 
 /* Navbar Props for Desktop and Mobile Versions */
-
 export interface NavBarProps {
   name: string;
   subLabel?: string;
@@ -22,7 +21,6 @@ export interface NavBarProps {
 }
 
 /* Object with Navbar options */
-
 export const Links = [
   {
     name: "About",
@@ -78,9 +76,7 @@ export default function Navbar() {
               color={useColorModeValue("text.800", "white")}
               _hover={{
                 bg: "none",
-                color: useColorModeValue("brown", "yellow.400"),
-              }}
-            />
+                color: useColorModeValue("brown", "yellow.400") }} />
           </Flex>
           {/* Desktop Container for Light/Dark Mode and Options */}
           <Flex display={{ base: "none", md: "flex" }} align={"center"}>

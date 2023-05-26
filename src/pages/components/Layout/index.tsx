@@ -1,12 +1,13 @@
-import Navbar from '../Navbar';
 import Footer from '../Footer';
 import { Container } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
+/* Props */
 interface LayoutProps {
   children: ReactNode;
 }
 
+/* Rendering */
 export default function Layout(props: LayoutProps) {
 
   const { children } = props;
@@ -16,7 +17,7 @@ export default function Layout(props: LayoutProps) {
       <Container
         maxW={'100%'}
         p={'0'}>
-      {children}
+        {children}
       </Container>
       <Footer />
     </>

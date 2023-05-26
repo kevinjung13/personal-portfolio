@@ -26,9 +26,9 @@ export default function Work() {
           program2={"Float UI"}
           program3={"Tailwind CSS"}
           program4={"TypeScript"}
-          summary={`My most recent project.
+          summary={`My most recent project, created 6-7 months into my self taught coding journey.
           Farang was created out of a desire to help both newly relocated and exisiting expats.
-          Biggest lesson: Planning and outlining the structure is crucial before any code is typed into the code editor.`} />
+          Biggest lesson learnt: Planning and outlining the structure of a project is crucial before any code is typed into the code editor.`} />
         {/* Oasis Marketplace */}
         <Card
           src={"/photos/oasis.jpg"}
@@ -39,10 +39,10 @@ export default function Work() {
           program1={"Next Js"}
           program2={"Chakra UI"}
           program3={"TypeScript"}
-          summary={`My first collaboration with a seasoned developer (currently still ongoing).
+          summary={`My first collaboration with a seasoned developer and currently an ongoing project.
           At this point, I had learnt how to code for 5-6 months.
-          Created all Front End related components and pages.
-          The biggest lesson I have learnt so far is to ensure to leverage all features of a component library.`} />
+          Created all current Front End related components and pages.
+          Biggest lesson learnt so far: Ensure to leverage all features of a component library.`} />
         {/* Conversor */}
         <Card
           src={"/photos/conversor.png"}
@@ -55,7 +55,7 @@ export default function Work() {
           program3={"JavaScript"}
           program4={"React"}
           summary={`A simple currency exchange website I created after going through a few courses on freeCodeCamp 
-          (My first attempt at making something).
+          (My first attempt at making something properly).
           At this point, I had learnt how to code for 3-4 months.
           As I was working full time, I maximized my free time (evenings and weekends) to create this.`} />
       </Container>

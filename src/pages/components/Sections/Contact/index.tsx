@@ -39,14 +39,14 @@ export default function Contact() {
                 direction={{ base: "column", md: "row" }}>
                 {/* Container for form itself */}
                 <Box
-                  bg={useColorModeValue("white", "gray.700")}
+                  bg={useColorModeValue("white", "gray.800")}
                   borderRadius="lg"
                   w={{ md: "50vw" }}
                   p={8}
                   color={useColorModeValue("gray.700", "whiteAlpha.900")}
                   shadow="base">
                   {/* Stacking of form items */}
-                  <VStack spacing={5}>
+                  <VStack spacing={5} >
                     {/* Form */}
                     <Form
                       formEndpoint={"mdovvdeq"} />

@@ -46,8 +46,8 @@ export default function About() {
                 <br />
                 <Text>
                   Nowadays, I have been collaborating with another developer
-                  (friend & mentor) to build exciting and challenging projects,
-                  in order to continue learning and improving my skills. In
+                  (friend & mentor) to continue building "Oasis Marketplace",
+                  and continuing to learn new tools to improve my skills. In
                   addition, I have slowly started diving into the world of Back
                   End Development, in hopes of becoming a Full Stack Developer
                   in the future.
