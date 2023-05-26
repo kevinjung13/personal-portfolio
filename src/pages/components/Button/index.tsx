@@ -1,4 +1,4 @@
-import { Button, Link } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 
 /* Button Props */
 export interface ButtonProps {
@@ -6,8 +6,6 @@ export interface ButtonProps {
   bgColor: string;
   fontColor: string;
   hoverColor?: string;
-  URL?: string;
-  target?: string;
   type?: "button" | "submit"
   isDisabled?: boolean;
   isLoading?: boolean;
@@ -24,8 +22,6 @@ export default function ProjectButton(props: ButtonProps) {
     bgColor,
     fontColor,
     hoverColor,
-    URL,
-    target,
     isDisabled,
     isLoading,
     loadingText,
@@ -36,25 +32,20 @@ export default function ProjectButton(props: ButtonProps) {
 
     return (
       <>
-        <Link
-          href={URL}
-          target={target}
-          isExternal>
-          <Button
-            w={'fit'}
-            rounded={'full'}
-            bg={bgColor}
-            color={fontColor}
-            loadingText={loadingText}
-            isDisabled={isDisabled}
-            isLoading={isLoading}
-            type={type}
-            size={size}
-            _hover={{ bg: hoverColor }}
-            onClick={onClick}>
-            {text}
-          </Button>
-        </Link>
+        <Button
+          w={'fit'}
+          rounded={'full'}
+          bg={bgColor}
+          color={fontColor}
+          loadingText={loadingText}
+          isDisabled={isDisabled}
+          isLoading={isLoading}
+          type={type}
+          size={size}
+          _hover={{ bg: hoverColor }}
+          onClick={onClick}>
+          {text}
+        </Button>
       </>
     )
   }

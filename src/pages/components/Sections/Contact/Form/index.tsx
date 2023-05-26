@@ -129,7 +129,6 @@ export default function Form() {
           {/* Send Message Button */}
           <ProjectButton
             type={"submit"}
-            target={"none"}
             bgColor={useColorModeValue("blue.400", "charcoal.700")}
             fontColor={useColorModeValue("gray.100", "white")}
             hoverColor={"red.500"}

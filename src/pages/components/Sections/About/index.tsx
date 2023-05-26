@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ProjectButton from "../../Button";
 import {
   Box,
@@ -18,7 +19,7 @@ export default function About() {
       <Box
         bg={useColorModeValue("white", "gray.900")}
         id={"about"}
-        w={"full"}>
+        maxW={"full"}>
         {/* Container for Grid */}
         <Container maxW={"5xl"} py={12}>
           {/* Grid */}
@@ -54,21 +55,24 @@ export default function About() {
                 </Text>
               </Box>
               {/* Button */}
-              <ProjectButton
-                bgColor={useColorModeValue("blue.400", "charcoal.700")}
-                fontColor={"white"}
-                text={"Resume"}
-                hoverColor={"red.500"}
-                URL={"/resume/Kevin-Jung-Resume.pdf"}
-                target={"_blank"} />
+              <Link
+                href={"/resume/Kevin-Jung-Resume.pdf"}
+                target={"_blank"}>
+                <ProjectButton
+                  bgColor={useColorModeValue("blue.400", "charcoal.700")}
+                  fontColor={"white"}
+                  text={"Resume"}
+                  hoverColor={"red.500"} />
+              </Link>
             </Stack>
             {/* Flex Container for Image */}
             <Flex>
               <Image
                 rounded={"md"}
+                loading={"lazy"}
                 alt={"profile image"}
                 src={"/photos/profile-pic.jpg"}
-                objectFit={"cover"} />
+                objectFit={"cover"}/>
             </Flex>
           </SimpleGrid>
         </Container>
