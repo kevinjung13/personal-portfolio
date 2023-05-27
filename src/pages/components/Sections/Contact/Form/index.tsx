@@ -133,7 +133,7 @@ export default function Form() {
             fontColor={useColorModeValue("gray.100", "white")}
             hoverColor={"red.500"}
             isLoading={isLoading && isSubmitting}
-            loadingText={"Submitting"}
+            loadingText={"Sending"}
             onClick={handleClick}
             isDisabled={isSubmitting}
             text={"Send Message"} />
