@@ -22,7 +22,7 @@ export default function Work() {
           description={"Bangkok Expat Guide"}
           link={"https://expat-guide.vercel.app/"}
           target={"_blank"}
-          program1={"Next Js"}
+          program1={"Next Js (Pages Router)"}
           program2={"Float UI"}
           program3={"Tailwind CSS"}
           program4={"TypeScript"}
@@ -36,7 +36,7 @@ export default function Work() {
           description={"Open Source AI NFT Marketplace"}
           link={"https://oasis-marketplace-pxk6wnbo8-jeromevvb.vercel.app/"}
           target={"_blank"}
-          program1={"Next Js"}
+          program1={"Next Js (Pages Router)"}
           program2={"Chakra UI"}
           program3={"TypeScript"}
           summary={`My first collaboration with a seasoned developer and currently an ongoing project.
@@ -65,7 +65,7 @@ export default function Work() {
           description={"Official Website (COMING SOON)"}
           link={""}
           target={""}
-          program1={"Next Js"}
+          program1={"Next Js (App Router)"}
           program2={"MUI (Material UI)"}
           program3={"Storybook"}
           program4={"TypeScript"}
