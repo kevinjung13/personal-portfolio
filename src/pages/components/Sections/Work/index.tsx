@@ -58,6 +58,19 @@ export default function Work() {
           (My first attempt at making something properly).
           At this point, I had learnt how to code for 3-4 months.
           As I was working full time, I maximized my free time (evenings and weekends) to create this.`} />
+        {/* Findfolks */}
+        <Card
+          src={"/photos/findfolks.png"}
+          title={"Findfolks"}
+          description={"Official Website (COMING SOON)"}
+          link={""}
+          target={""}
+          program1={"Next Js"}
+          program2={"MUI (Material UI)"}
+          program3={"Storybook"}
+          program4={"TypeScript"}
+          summary={`Approached by Startup company "Findfolks," to build their official website.
+          Currently on progress.`} />
       </Container>
     </>
   );
